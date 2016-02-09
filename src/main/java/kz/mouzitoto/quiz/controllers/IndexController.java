@@ -60,5 +60,10 @@ public class IndexController {
         return mav;
     }
 
+    @RequestMapping(value = "/signIn")
+    public String getSignIn(){
+        return "signIn";
+    }
+
 
 }

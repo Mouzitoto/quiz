@@ -1,9 +1,14 @@
 package kz.mouzitoto.quiz.dao.models;
 
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+
 /**
  * Created by ruslan.babich on 27.01.2016.
  */
-public class User {
+
+public class User{
+
     private Long id;
     private String login;
     private String passwordHash;
@@ -11,6 +16,15 @@ public class User {
     private String fullName;
 
 
+    public User(Long id, String login, String passwordHash, String email, String fullName) {
+        this.id = id;
+        this.login = login;
+        this.passwordHash = passwordHash;
+        this.email = email;
+        this.fullName = fullName;
+    }
+
+    public User() {}
 
     //getters and setters
 

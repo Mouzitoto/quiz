@@ -1,1 +1,7 @@
+E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\dao\rowmappers\UserRowMapper.java
+E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\controllers\UserRestController.java
 E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\controllers\IndexController.java
+E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\dao\impls\JDBCUserDAO.java
+E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\dao\interfaces\IUserDAO.java
+E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\dao\models\User.java
+E:\projects\MINE\quiz\src\main\java\kz\mouzitoto\quiz\services\UserService.java

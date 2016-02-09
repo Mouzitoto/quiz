@@ -1,1 +1,7 @@
+kz\mouzitoto\quiz\controllers\UserRestController.class
+kz\mouzitoto\quiz\dao\rowmappers\UserRowMapper.class
+kz\mouzitoto\quiz\services\UserService.class
+kz\mouzitoto\quiz\dao\models\User.class
+kz\mouzitoto\quiz\dao\interfaces\IUserDAO.class
+kz\mouzitoto\quiz\dao\impls\JDBCUserDAO.class
 kz\mouzitoto\quiz\controllers\IndexController.class

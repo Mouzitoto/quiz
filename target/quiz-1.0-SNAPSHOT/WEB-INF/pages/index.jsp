@@ -35,5 +35,11 @@
     <input type="text" name="password"/>
     <input type="submit" value="Insert"/>
 </form>
+<br/>
+<br/>
+<br/>
+<form action="/signIn">
+    <input type="submit" value="Sign in"/>
+</form>
 </body>
 </html>
