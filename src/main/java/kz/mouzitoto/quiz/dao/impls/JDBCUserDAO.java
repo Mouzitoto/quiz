@@ -65,4 +65,28 @@ public class JDBCUserDAO implements IUserDAO{
 
         return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class);
     }
+
+    public boolean checkUserByLoginAndPassword(String login, String password) {
+        String query = "select count(*) from t_users where vlogin = :login and vpasswordhash = :password";
+
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("login", login);
+        params.addValue("password", password);
+
+        int count = jdbcTemplate.queryForObject(query, params, Integer.class);
+
+        return (count > 0);
+    }
+
+    public User getUserByLoginAndPassword(String login, String password) {
+        String query = "select * from t_users where vlogin = :login and vpasswordhash = :password";
+
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("login", login);
+        params.addValue("password", password);
+
+        return jdbcTemplate.queryForObject(query, params, new UserRowMapper());
+    }
+
+
 }

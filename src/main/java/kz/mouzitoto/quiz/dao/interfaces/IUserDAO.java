@@ -17,4 +17,8 @@ public interface IUserDAO {
     public List<User> getAllUsers();
 
     public Integer getUserCount();
+
+    public boolean checkUserByLoginAndPassword(String login, String password);
+
+    public User getUserByLoginAndPassword(String login, String password);
 }

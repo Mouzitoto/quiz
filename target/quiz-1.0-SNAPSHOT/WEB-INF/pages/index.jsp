@@ -11,6 +11,7 @@
     <title>Index Page</title>
 </head>
 <body>
+<h2>Hello ${user.fullName}</h2>
 <form action="/select">
     <input type="submit" value="Select"/>
 </form>

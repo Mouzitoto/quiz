@@ -21,11 +21,7 @@ public class IndexController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/")
-    public String getIndex() {
-//        return "index";
-        return "signIn";
-    }
+
 
     @RequestMapping(value = "/select")
     public ModelAndView getSelect() {
@@ -66,37 +62,16 @@ public class IndexController {
         return "signIn";
     }
 
-    @RequestMapping(value = "/registration")
-    public String getRegistration(){
-        return "registration";
+    @RequestMapping(value = "/index")
+    public String getIndexPage() {
+        return "index";
     }
 
-    @RequestMapping(value = "/register")
-    public String register(@RequestParam(value="login") String login,
-                           @RequestParam(value="name") String name,
-                           @RequestParam(value="email") String email,
-                           @RequestParam(value="password") String password) {
-        userService.insertUser(login, email, password, name);
 
-        return "signIn";
 
-    }
 
-    @RequestMapping(value = "/home")
-    public ModelAndView getHome(@RequestParam(value = "login") String login,
-                                @RequestParam(value = "password") String password){
-//        redo this shit after...
-//        check for db user and if correct
-//        get the user from db
-        User user = new User();
-        user.setFullName(login);
 
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("user", user);
-        mav.setViewName("home");
 
-        return mav;
-    }
 
 
 

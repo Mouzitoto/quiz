@@ -33,7 +33,7 @@
                 <li><a href="#">My quizes</a></li>
                 <li><a href="#">Create quiz</a></li>
                 <li><a href="#">My results</a></li>
-                <li><a href="#">Best results</a></li>
+                <li><a href="/index">Best results</a></li>
             </ul>
             <%--right menu--%>
             <ul class="nav navbar-nav navbar-right">

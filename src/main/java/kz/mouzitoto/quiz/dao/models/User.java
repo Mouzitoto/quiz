@@ -1,5 +1,8 @@
 package kz.mouzitoto.quiz.dao.models;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
@@ -7,6 +10,8 @@ import java.io.Serializable;
  * Created by ruslan.babich on 27.01.2016.
  */
 
+//@Component
+//@Scope("session")
 public class User{
 
     private Long id;
