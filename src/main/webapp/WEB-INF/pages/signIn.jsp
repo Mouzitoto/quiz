@@ -23,9 +23,9 @@
         <div id="output"></div>
         <div class="avatar"></div>
         <div class="form-box">
-            <form action="" method="">
-                <input name="user" type="text" placeholder="username">
-                <input type="password" placeholder="password">
+            <form action="/home" method="POST">
+                <input name="login" type="text" placeholder="username">
+                <input name="password" type="password" placeholder="password">
                 <button class="btn btn-info btn-block login" type="submit">Login</button>
             </form>
             <br/>

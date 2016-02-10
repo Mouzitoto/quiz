@@ -23,7 +23,8 @@ public class IndexController {
 
     @RequestMapping(value = "/")
     public String getIndex() {
-        return "index";
+//        return "index";
+        return "signIn";
     }
 
     @RequestMapping(value = "/select")
@@ -77,9 +78,27 @@ public class IndexController {
                            @RequestParam(value="password") String password) {
         userService.insertUser(login, email, password, name);
 
-        return "home";
+        return "signIn";
 
     }
+
+    @RequestMapping(value = "/home")
+    public ModelAndView getHome(@RequestParam(value = "login") String login,
+                                @RequestParam(value = "password") String password){
+//        redo this shit after...
+//        check for db user and if correct
+//        get the user from db
+        User user = new User();
+        user.setFullName(login);
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("user", user);
+        mav.setViewName("home");
+
+        return mav;
+    }
+
+
 
 
 }

@@ -1,0 +1,35 @@
+/*Header*/
+.logged-user-menu-block {
+    line-height: 20px;
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    color: #777;
+}
+
+.logo {
+    height: 50px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+}
+
+.middle-menu {
+    margin-left: 50px;
+}
+
+/*Search Box*/
+#imaginary_container{
+    margin-top: 1%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
