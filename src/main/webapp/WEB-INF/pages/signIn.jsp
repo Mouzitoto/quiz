@@ -28,6 +28,8 @@
                 <input type="password" placeholder="password">
                 <button class="btn btn-info btn-block login" type="submit">Login</button>
             </form>
+            <br/>
+            <a href="/registration">Registration</a>
         </div>
     </div>
 </div>

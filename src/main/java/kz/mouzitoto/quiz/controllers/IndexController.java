@@ -65,5 +65,21 @@ public class IndexController {
         return "signIn";
     }
 
+    @RequestMapping(value = "/registration")
+    public String getRegistration(){
+        return "registration";
+    }
+
+    @RequestMapping(value = "/register")
+    public String register(@RequestParam(value="login") String login,
+                           @RequestParam(value="name") String name,
+                           @RequestParam(value="email") String email,
+                           @RequestParam(value="password") String password) {
+        userService.insertUser(login, email, password, name);
+
+        return "home";
+
+    }
+
 
 }
