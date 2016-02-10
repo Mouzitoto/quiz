@@ -24,14 +24,14 @@
     <div class="container-fluid">
         <%--Logo--%>
         <div class="navbar-header">
-            <a href="#" class="pull-left"><img class="logo" src="/resources/img/logo-gray.png"></a>
+            <a href="/home" class="pull-left"><img class="logo" src="/resources/img/logo-gray.png"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <%--middle menu--%>
             <ul class="nav navbar-nav middle-menu">
                 <li><a href="#">My quizes</a></li>
-                <li><a href="#">Create quiz</a></li>
+                <li><a href="/createQuiz">Create quiz</a></li>
                 <li><a href="#">My results</a></li>
                 <li><a href="/index">Best results</a></li>
             </ul>
