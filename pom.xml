@@ -12,6 +12,7 @@
   </properties>
 
   <dependencies>
+    <!--SPRING-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
@@ -23,6 +24,8 @@
       <artifactId>spring-jdbc</artifactId>
       <version>4.2.4.RELEASE</version>
     </dependency>
+
+    <!--END SPRING-->
 
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -36,6 +39,12 @@
       <version>9.4.1207.jre7</version>
     </dependency>
 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.0-b01</version>
+    </dependency>
+
 
     <!-- Jackson JSON Processor -->
     <dependency>
@@ -46,4 +55,11 @@
 
 
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>spring-snapshot</id>
+      <url>https://repo.spring.io/libs-snapshot</url>
+    </repository>
+  </repositories>
 </project>

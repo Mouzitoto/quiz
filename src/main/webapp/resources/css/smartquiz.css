@@ -33,3 +33,10 @@
     border:0;
     background:transparent;
 }
+
+/*Other shit*/
+.col-centered {
+    width: 75%;
+    margin: 0 auto;
+}
+

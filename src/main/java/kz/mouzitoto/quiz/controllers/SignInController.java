@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by ruslan.babich on 10.02.2016.
  */
 
 @Controller
-@SessionAttributes("user")
 public class SignInController {
 
     @Autowired
@@ -28,25 +29,37 @@ public class SignInController {
 
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String getHomePage(){
+    public String getHomePage() {
         return "home";
     }
 
     //when we press "login" on sign in page
+//    @RequestMapping(value = "/home", method = RequestMethod.POST)
+//    public ModelAndView getHomePage(@RequestParam(value = "login") String login,
+//                                    @RequestParam(value = "password") String password) {
+//        ModelAndView mav = new ModelAndView();
+//        if (userService.checkUserByLoginAndPassword(login, password)) {
+//            mav.setViewName("home");
+//            mav.addObject("user", userService.getUserByLoginAndPassword(login, password));
+//
+//
+//            return mav;
+//        }
+//
+//        mav.setViewName("signIn");
+//        return mav;
+//    }
+
     @RequestMapping(value = "/home", method = RequestMethod.POST)
-    public ModelAndView getHomePage(@RequestParam(value = "login") String login,
-                                    @RequestParam(value = "password") String password) {
-        ModelAndView mav = new ModelAndView();
+    public String getHomePage(@RequestParam(value = "login") String login,
+                              @RequestParam(value = "password") String password,
+                              HttpSession session) {
         if (userService.checkUserByLoginAndPassword(login, password)) {
-            mav.setViewName("home");
-            mav.addObject("user", userService.getUserByLoginAndPassword(login, password));
-
-
-            return mav;
+            session.setAttribute("user", userService.getUserByLoginAndPassword(login, password));
+            return "home";
         }
 
-        mav.setViewName("signIn");
-        return mav;
+        return "signIn";
     }
 
     //registration

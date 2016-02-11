@@ -30,7 +30,7 @@
             <%--middle menu--%>
             <ul class="nav navbar-nav middle-menu">
                 <li><a href="#">My quizes</a></li>
-                <li><a href="/createQuiz">Create quiz</a></li>
+                <li><a href="/createQuizPage">Create quiz</a></li>
                 <li><a href="#">My results</a></li>
                 <li><a href="/index">Best results</a></li>
             </ul>
@@ -45,12 +45,12 @@
 
 
 <div class="container">
-    <form>
+    <form class="col-centered" action="/createQuiz">
         <div class="form-group">
             <label for="quizName">Enter quiz name: </label>
             <input type="text" class="form-control" id="quizName" name="quizName">
         </div>
-        <button type="submit" class="btn btn-default">Create quiz</button>
+        <button type="submit" class="btn btn-info">Create quiz</button>
     </form>
 </div>
 

@@ -31,7 +31,7 @@
             <%--middle menu--%>
             <ul class="nav navbar-nav middle-menu">
                 <li><a href="#">My quizes</a></li>
-                <li><a href="/createQuiz">Create quiz</a></li>
+                <li><a href="/createQuizPage">Create quiz</a></li>
                 <li><a href="#">My results</a></li>
                 <li><a href="/index">Best results</a></li>
             </ul>
