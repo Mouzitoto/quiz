@@ -12,7 +12,7 @@
 
     <%--Bootstrap core CSS--%>
     <link href="/resources/frameworks/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <%--custom sign in css--%>
+    <%--custom css--%>
     <link href="/resources/css/registration.css" rel="stylesheet">
 
 

@@ -6,6 +6,7 @@ import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.dao.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,6 +14,8 @@ import java.sql.SQLException;
 /**
  * Created by ruslan.babich on 27.01.2016.
  */
+
+@Component
 public class QuizRowMapper implements RowMapper<Quiz>{
 
     @Autowired
@@ -23,7 +26,9 @@ public class QuizRowMapper implements RowMapper<Quiz>{
         quiz.setId(rs.getLong("id"));
         quiz.setName(rs.getString("vname"));
         quiz.setCreateDate(rs.getDate("dcreatedate"));
-        quiz.setUser(jdbcUserDAO.getUserById(rs.getLong("nuserid")));
+//        User user = jdbcUserDAO.getUserById(rs.getLong("nuserid"));
+        User user = new User();
+        quiz.setUser(user);
         quiz.setActive(rs.getBoolean("bisactive"));
 
         return quiz;

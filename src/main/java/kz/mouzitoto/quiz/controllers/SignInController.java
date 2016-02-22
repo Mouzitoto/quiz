@@ -21,44 +21,18 @@ public class SignInController {
     @Autowired
     private UserService userService;
 
-    //index page (authorization)
-    @RequestMapping(value = "/")
-    public String getSignInPage() {
-        return "signIn";
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String getIndexPage() {
+        return "home";
     }
 
-
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/home")
     public String getHomePage() {
         return "home";
     }
 
-    //when we press "login" on sign in page
-//    @RequestMapping(value = "/home", method = RequestMethod.POST)
-//    public ModelAndView getHomePage(@RequestParam(value = "login") String login,
-//                                    @RequestParam(value = "password") String password) {
-//        ModelAndView mav = new ModelAndView();
-//        if (userService.checkUserByLoginAndPassword(login, password)) {
-//            mav.setViewName("home");
-//            mav.addObject("user", userService.getUserByLoginAndPassword(login, password));
-//
-//
-//            return mav;
-//        }
-//
-//        mav.setViewName("signIn");
-//        return mav;
-//    }
-
-    @RequestMapping(value = "/home", method = RequestMethod.POST)
-    public String getHomePage(@RequestParam(value = "login") String login,
-                              @RequestParam(value = "password") String password,
-                              HttpSession session) {
-        if (userService.checkUserByLoginAndPassword(login, password)) {
-            session.setAttribute("user", userService.getUserByLoginAndPassword(login, password));
-            return "home";
-        }
-
+    @RequestMapping(value = "/signIn")
+    public String getSignInPage(){
         return "signIn";
     }
 
@@ -76,9 +50,24 @@ public class SignInController {
                            @RequestParam(value = "password") String password) {
         userService.insertUser(login, email, password, name);
 
-        return "signIn";
+        return "home";
 
     }
 
 
 }
+
+
+//      JSON
+//    @RequestMapping(value = "/countries", method = RequestMethod.GET,headers="Accept=application/json")
+//    public User getUserJSON() {
+//        User user = new User();
+//
+//        user.setId(5L);
+//        user.setFullName("1Andrew");
+//        user.setLogin("1dron");
+//        user.setPasswordHash("1331356k");
+//        user.setEmail("1droncheg@mail.ru");
+//
+//        return user;
+//    }

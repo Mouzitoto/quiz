@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ruslan.babich
@@ -12,7 +13,7 @@
 
     <%--Bootstrap core CSS--%>
     <link href="/resources/frameworks/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <%--custom sign in css--%>
+    <%--custom css--%>
     <link href="/resources/css/signIn.css" rel="stylesheet">
 
 
@@ -23,8 +24,8 @@
         <div id="output"></div>
         <div class="avatar"></div>
         <div class="form-box">
-            <form action="/home" method="POST">
-                <input name="login" type="text" placeholder="username">
+            <form action="/home" method="post">
+                <input name="username" type="text" placeholder="username">
                 <input name="password" type="password" placeholder="password">
                 <button class="btn btn-info btn-block login" type="submit">Login</button>
             </form>

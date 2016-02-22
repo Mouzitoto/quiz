@@ -49,6 +49,9 @@ public class JDBCQuizDAO implements IQuizDAO {
     }
 
     public List<Quiz> getQuizesByUser(User user) {
-        return null;
+        String query = "select * from t_quizes where nuserid = :userId";
+        MapSqlParameterSource params = new MapSqlParameterSource("userId", user.getId());
+
+        return jdbcTemplate.query(query, params, new QuizRowMapper());
     }
 }
