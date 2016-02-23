@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16152868-25d3-4fc6-b7f0-0e757b543e4f" name="Default" comment="">
+    <list default="true" id="16152868-25d3-4fc6-b7f0-0e757b543e4f" name="Default" comment="Security works now, but css doesnt work :(">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/quiz-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/quiz-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
@@ -1223,7 +1223,7 @@
       <workItem from="1455682933411" duration="69000" />
       <workItem from="1455786823548" duration="1211000" />
       <workItem from="1455789656493" duration="1952000" />
-      <workItem from="1456233942664" duration="364000" />
+      <workItem from="1456233942664" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="Security works now, but css doesnt work :(">
       <created>1456234295471</created>
@@ -1231,11 +1231,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456234295471</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Security works now, but css doesnt work :(">
+      <created>1456234315151</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1456234315151</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66782000" />
+    <option name="totallyTimeSpent" value="66823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
