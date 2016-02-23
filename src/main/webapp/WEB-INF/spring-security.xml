@@ -12,6 +12,9 @@
         <intercept-url pattern="/signIn" access="permitAll" />
         <intercept-url pattern="/**" access="hasRole('ADMIN')" />
         <form-login login-page="/signIn"
+                    login-processing-url="/signIn"
+                    default-target-url="/home"
+                    always-use-default-target="true"
                     username-parameter="username"
                     password-parameter="password"
                     authentication-failure-url="/signIn"
