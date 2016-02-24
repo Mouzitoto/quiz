@@ -12,9 +12,9 @@
     <title>Sign in Page</title>
 
     <%--Bootstrap core CSS--%>
-    <link href="/resources/frameworks/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/frameworks/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>" rel="stylesheet">
     <%--custom css--%>
-    <link href="/resources/css/signIn.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/signIn.css"/>" rel="stylesheet">
 
 
 </head>
