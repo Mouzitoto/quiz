@@ -40,3 +40,7 @@
     margin: 0 auto;
 }
 
+.no-float {
+    float: none;
+}
+

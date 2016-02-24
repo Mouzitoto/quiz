@@ -24,7 +24,7 @@
             </ul>
             <%--right menu--%>
             <ul class="nav navbar-nav navbar-right">
-                <li><span class="logged-userId-menu-block">Logged in as <a>${user.fullName}</a></span></li>
+                <li><span class="logged-user-menu-block">Logged in as <a>${user.fullName}</a></span></li>
                 <li><a href="/logout">Log out</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->

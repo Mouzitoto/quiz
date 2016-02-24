@@ -16,9 +16,6 @@
     <%--custom css--%>
     <link href="/resources/css/smartQuiz.css" rel="stylesheet">
 
-    <%--custom js--%>
-    <script src="/resources/js/smartQuiz.js"></script>
-
 </head>
 <body>
 
@@ -26,32 +23,14 @@
 
 
 <div class="container">
-    <h1>Click the filter icon
-        <small>(<i class="glyphicon glyphicon-filter"></i>)</small>
-    </h1>
     <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-primary">
+        <div class="col-md-6 no-float center-block">
+            <div class="panel panel-primary center-block">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Developers</h3>
+                    <h3 class="panel-title">My Quizes</h3>
+                </div>
 
-                    <div class="pull-right">
-							<span class="clickable filter" data-toggle="tooltip" title="Toggle table filter"
-                                  data-container="body">
-								<i class="glyphicon glyphicon-filter"></i>
-							</span>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <input type="text" class="form-control" id="dev-table-filter" data-action="filter"
-                           data-filters="#dev-table" placeholder="Filter Developers"/>
-                </div>
                 <table class="table table-hover" id="dev-table">
-                    <thead>
-                    <tr>
-                        <th>Quiz Name</th>
-                    </tr>
-                    </thead>
                     <tbody>
                     <c:forEach items="${userQuizes}" var="uQ" varStatus="status">
                         <tr>
