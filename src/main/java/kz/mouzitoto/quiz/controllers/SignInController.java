@@ -26,8 +26,13 @@ public class SignInController {
         return "home";
     }
 
-    @RequestMapping(value = "/home")
-    public String getHomePage() {
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String getHomePageAfterAuthorization(
+            @RequestParam(value = "isAuthorized", required = false) Boolean isAuthorized) {
+
+        if(isAuthorized)
+            userService.putUserIntoHttpSession();
+
         return "home";
     }
 

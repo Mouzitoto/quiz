@@ -7,30 +7,33 @@
             http://www.springframework.org/schema/security
             http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <http auto-config="true" >
+    <http auto-config="true">
         <csrf disabled="true"/>
         <intercept-url pattern="/signIn" access="permitAll" />
         <intercept-url pattern="/resources/**" access="permitAll"/>
-        <intercept-url pattern="/**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/**" access="hasAuthority('admin')" />
         <form-login login-page="/signIn"
                     login-processing-url="/signIn"
-                    default-target-url="/home"
+                    default-target-url="/home?isAuthorized=true"
                     always-use-default-target="true"
                     username-parameter="username"
                     password-parameter="password"
-                    authentication-failure-url="/signIn"
-
+                    authentication-failure-url="/signIn?accessDenied=true"
         />
         <logout logout-url="/logout"/>
     </http>
 
+
+
     <authentication-manager >
         <authentication-provider>
-            <user-service>
-                <user name="bill"  password="abc123"  authorities="ROLE_USER" />
-                <user name="admin" password="root123" authorities="ROLE_ADMIN" />
-                <user name="dba"   password="root123" authorities="ROLE_ADMIN,ROLE_DBA" />
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query="select vlogin, vpasswordhash, bisactive from t_users where vlogin=?"
+                               authorities-by-username-query="
+                                        select us.vlogin, rol.vname from t_userstoroles utr
+                                        inner join t_users us on us.id = utr.nuserid
+                                        inner join t_roles rol on rol.id = utr.nroleid
+                                        where us.vlogin = ?" />
         </authentication-provider>
     </authentication-manager>
 

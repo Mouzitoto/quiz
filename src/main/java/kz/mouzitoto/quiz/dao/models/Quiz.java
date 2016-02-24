@@ -9,7 +9,7 @@ public class Quiz {
 
     private Long id;
     private String name;
-    private User user;
+    private Long userId;
     private Date createDate;
     private Boolean isActive;
 
@@ -31,12 +31,12 @@ public class Quiz {
         this.name = name;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getCreateDate() {

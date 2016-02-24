@@ -26,9 +26,7 @@ public class QuizRowMapper implements RowMapper<Quiz>{
         quiz.setId(rs.getLong("id"));
         quiz.setName(rs.getString("vname"));
         quiz.setCreateDate(rs.getDate("dcreatedate"));
-//        User user = jdbcUserDAO.getUserById(rs.getLong("nuserid"));
-        User user = new User();
-        quiz.setUser(user);
+        quiz.setUserId(rs.getLong("nuserid"));
         quiz.setActive(rs.getBoolean("bisactive"));
 
         return quiz;

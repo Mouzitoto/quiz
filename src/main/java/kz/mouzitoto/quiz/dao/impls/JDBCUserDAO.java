@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.util.List;
 
@@ -25,6 +27,9 @@ public class JDBCUserDAO implements IUserDAO{
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
+
+    @Autowired
+    HttpSession session;
 
     public User getUserById(Long id) {
         String query = "select * from t_users where id = :id";
@@ -66,26 +71,22 @@ public class JDBCUserDAO implements IUserDAO{
         return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class);
     }
 
-    public boolean checkUserByLoginAndPassword(String login, String password) {
-        String query = "select count(*) from t_users where vlogin = :login and vpasswordhash = :password";
+    public User getUserByLogin(String login) {
+        String query = "select * from t_users where vlogin = :login";
 
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("login", login);
-        params.addValue("password", password);
-
-        int count = jdbcTemplate.queryForObject(query, params, Integer.class);
-
-        return (count > 0);
-    }
-
-    public User getUserByLoginAndPassword(String login, String password) {
-        String query = "select * from t_users where vlogin = :login and vpasswordhash = :password";
-
-        MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("login", login);
-        params.addValue("password", password);
 
         return jdbcTemplate.queryForObject(query, params, new UserRowMapper());
+    }
+
+    public void putUserIntoHttpSession() {
+        String userName = ((org.springframework.security.core.userdetails.User)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+                .getUsername();
+        User user = getUserByLogin(userName);
+
+        session.setAttribute("user", user);
     }
 
 

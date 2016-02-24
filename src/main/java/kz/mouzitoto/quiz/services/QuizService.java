@@ -4,6 +4,7 @@ import kz.mouzitoto.quiz.dao.impls.JDBCQuizDAO;
 import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.dao.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.HttpRequestHandlerServlet;
 

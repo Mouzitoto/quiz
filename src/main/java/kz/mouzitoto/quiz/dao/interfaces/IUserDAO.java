@@ -18,7 +18,7 @@ public interface IUserDAO {
 
     public Integer getUserCount();
 
-    public boolean checkUserByLoginAndPassword(String login, String password);
+    public User getUserByLogin(String login);
 
-    public User getUserByLoginAndPassword(String login, String password);
+    public void putUserIntoHttpSession();
 }

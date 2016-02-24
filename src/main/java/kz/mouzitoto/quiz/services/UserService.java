@@ -43,12 +43,8 @@ public class UserService {
         return jdbcUserDAO.getUserCount();
     }
 
-    public boolean checkUserByLoginAndPassword(String login, String password) {
-        return jdbcUserDAO.checkUserByLoginAndPassword(login, password);
-    }
-
-    public User getUserByLoginAndPassword(String login, String password) {
-        return jdbcUserDAO.getUserByLoginAndPassword(login, password);
+    public void putUserIntoHttpSession() {
+        jdbcUserDAO.putUserIntoHttpSession();
     }
 
 }
