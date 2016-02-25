@@ -34,21 +34,19 @@
                 <input type="button" onclick="addQAForm()" value="Add question" class="pull-right"/>
             </div>
             <div id="questionsContainer" class="row">
-                <table class="table table-hover">
-                    <tbody>
-                    <c:forEach items="${questions}" var="questions" varStatus="status">
-                        <tr>
-                            <td>${questions.body}</td>
-                        </tr>
-
-                        <tr>
-                        <c:forEach items="${questions.answers}" var="answers" varStatus="status">
-                            <td>${answers.body}</td>
-                        </c:forEach>
-                        </tr>
+                <c:forEach items="${questions}" var="questions" varStatus="status">
+                    <div class="col-md-12">
+                        <label>${questions.body}</label>
+                    </div>
+                    <c:forEach items="${questions.answers}" var="answers" varStatus="status">
+                        <div class="col-md-6">
+                            <span>${answers.body}</span>
+                        </div>
                     </c:forEach>
-                    </tbody>
-                </table>
+                    <div class="col-md-12">
+                        <hr class="questions-hr">
+                    </div>
+                </c:forEach>
             </div>
         </div>
 
