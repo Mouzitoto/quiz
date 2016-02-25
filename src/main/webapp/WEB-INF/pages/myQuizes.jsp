@@ -30,11 +30,11 @@
                     <h3 class="panel-title">My Quizes</h3>
                 </div>
 
-                <table class="table table-hover" id="dev-table">
+                <table class="table table-hover">
                     <tbody>
                     <c:forEach items="${userQuizes}" var="uQ" varStatus="status">
                         <tr>
-                            <td>${uQ.name}</td>
+                            <td><a href="/editQuiz/${uQ.id}"><div>${uQ.name}</div></a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

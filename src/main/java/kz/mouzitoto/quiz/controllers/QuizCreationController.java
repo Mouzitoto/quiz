@@ -1,12 +1,15 @@
 package kz.mouzitoto.quiz.controllers;
 
+import kz.mouzitoto.quiz.dao.models.Question;
 import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.dao.models.User;
 import kz.mouzitoto.quiz.services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,5 +46,37 @@ public class QuizCreationController {
         mav.addObject("userQuizes", userQuizes);
 
         return mav;
+    }
+
+    @RequestMapping(value = "/editQuiz/{quizId}", method = RequestMethod.GET)
+    public ModelAndView getEditQuizPageViaGet(@PathVariable(value = "quizId") Long quizId){
+        Quiz quiz = quizService.getQuizById(quizId);
+        List<Question> questions = quizService.getQuestionsByQuizId(quizId);
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("editQuiz");
+        mav.addObject("quiz", quiz);
+        mav.addObject("questions", questions);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/editQuiz/{quizId}", method = RequestMethod.POST)
+    public String getEditQuizPageViaPost(
+            @PathVariable(value = "quizId") Long quizId,
+            @RequestParam(value = "question") String question,
+            @RequestParam(value = "answerA") String answerA,
+            @RequestParam(value = "answerB") String answerB,
+            @RequestParam(value = "answerC") String answerC,
+            @RequestParam(value = "answerD") String answerD) {
+        quizService.insertQuestionAndAnswers(
+                quizId,
+                question,
+                answerA,
+                answerB,
+                answerC,
+                answerD);
+
+        return "redirect:/editQuiz/" + quizId;
     }
 }

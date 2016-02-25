@@ -60,6 +60,14 @@ public class SignInController {
     }
 
 
+
+
+    //tmp
+    @RequestMapping(value = "/tmp")
+    public String getTmpPage(){
+        return "tmp";
+    }
+
 }
 
 
