@@ -10,8 +10,6 @@ import java.io.Serializable;
  * Created by ruslan.babich on 27.01.2016.
  */
 
-//@Component
-//@Scope("session")
 public class User{
 
     private Long id;
@@ -19,6 +17,7 @@ public class User{
     private String passwordHash;
     private String email;
     private String fullName;
+    private Boolean isActive;
 
 
     public User(Long id, String login, String passwordHash, String email, String fullName) {
@@ -71,5 +70,13 @@ public class User{
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 }

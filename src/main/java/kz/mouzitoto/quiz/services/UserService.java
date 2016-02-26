@@ -1,5 +1,6 @@
 package kz.mouzitoto.quiz.services;
 
+import kz.mouzitoto.quiz.dao.JDBCCustomOperations;
 import kz.mouzitoto.quiz.dao.impls.JDBCUserDAO;
 import kz.mouzitoto.quiz.dao.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,19 +19,27 @@ public class UserService {
     @Autowired
     private JDBCUserDAO jdbcUserDAO;
 
+    @Autowired
+    private JDBCCustomOperations jdbcCustomOperations;
+
     public User getUserById(Long id) {
         return jdbcUserDAO.getUserById(id);
     }
 
 
-    public void insertUser(String login, String email, String password, String fullName) {
+    public void registerUser(String login, String email, String password, String fullName) {
         User user = new User();
+        user.setId(jdbcCustomOperations.getNextValFromMainSec());
         user.setLogin(login);
         user.setPasswordHash(password);
         user.setEmail(email);
         user.setFullName(fullName);
+        user.setActive(true);
 
         jdbcUserDAO.insertUser(user);
+        //Little hardcode here... 10 = role.name = "user"
+        //TODO: Change this hardcode to smth good
+        jdbcCustomOperations.insertRoleToUser(user.getId(), 10L);
     }
 
 

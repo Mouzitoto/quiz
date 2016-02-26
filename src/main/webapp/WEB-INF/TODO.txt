@@ -4,4 +4,4 @@
 4. CSS for header.jsp must be in header.jsp
 5. Do not insert null questions
 6. At least one answer must be correct
-7. Add roles to user after registration
+7. Authenticate user after registration

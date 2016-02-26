@@ -6,10 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpSession;
 
 /**
  * Created by ruslan.babich on 10.02.2016.
@@ -53,9 +49,9 @@ public class SignInController {
                            @RequestParam(value = "name") String name,
                            @RequestParam(value = "email") String email,
                            @RequestParam(value = "password") String password) {
-        userService.insertUser(login, email, password, name);
+        userService.registerUser(login, email, password, name);
 
-        return "home";
+        return "/signIn";
 
     }
 

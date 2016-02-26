@@ -17,6 +17,18 @@ function addQAForm(){
         var divAnswerB = document.createElement("div");
         var divAnswerC = document.createElement("div");
         var divAnswerD = document.createElement("div");
+        var divCheckBoxA = document.createElement("div");
+        var divCheckBoxB = document.createElement("div");
+        var divCheckBoxC = document.createElement("div");
+        var divCheckBoxD = document.createElement("div");
+        var labelCheckboxA = document.createElement("label");
+        var labelCheckboxB = document.createElement("label");
+        var labelCheckboxC = document.createElement("label");
+        var labelCheckboxD = document.createElement("label");
+        var inputCheckboxA = document.createElement("input");
+        var inputCheckboxB = document.createElement("input");
+        var inputCheckboxC = document.createElement("input");
+        var inputCheckboxD = document.createElement("input");
         var divSaveButton = document.createElement("div");
         var divCancelButton = document.createElement("div");
         var question = document.createElement("input");
@@ -38,6 +50,21 @@ function addQAForm(){
         divAnswerB.setAttribute("class", "form-group col-md-6");
         divAnswerC.setAttribute("class", "form-group col-md-6");
         divAnswerD.setAttribute("class", "form-group col-md-6");
+
+        divCheckBoxA.setAttribute("class", "checkbox");
+        divCheckBoxB.setAttribute("class", "checkbox");
+        divCheckBoxC.setAttribute("class", "checkbox");
+        divCheckBoxD.setAttribute("class", "checkbox");
+
+        inputCheckboxA.setAttribute("type", "checkbox");
+        inputCheckboxB.setAttribute("type", "checkbox");
+        inputCheckboxC.setAttribute("type", "checkbox");
+        inputCheckboxD.setAttribute("type", "checkbox");
+        inputCheckboxA.setAttribute("name", "isCorrectA");
+        inputCheckboxB.setAttribute("name", "isCorrectB");
+        inputCheckboxC.setAttribute("name", "isCorrectC");
+        inputCheckboxD.setAttribute("name", "isCorrectD");
+
         divSaveButton.setAttribute("class", "form-group col-md-6");
         divCancelButton.setAttribute("class", "form-group col-md-6");
 
@@ -64,8 +91,9 @@ function addQAForm(){
         saveButton.setAttribute("type", "submit");
         saveButton.setAttribute("value", "Save question");
 
-        cancelButton.setAttribute("type", "submit");
+        cancelButton.setAttribute("type", "button");
         cancelButton.setAttribute("value", "Cancel");
+        cancelButton.setAttribute("onclick", "location.href = '/editQuiz/" + quizId + "'");
 
         //appending elements to their parents
 
@@ -82,17 +110,32 @@ function addQAForm(){
         divQuestion.appendChild(document.createTextNode("Question"));
         divQuestion.appendChild(question);
 
-        divAnswerA.appendChild(document.createTextNode("Answer A"));
+        divAnswerA.appendChild(divCheckBoxA);
         divAnswerA.appendChild(answerA);
 
-        divAnswerB.appendChild(document.createTextNode("Answer B"));
+        divAnswerB.appendChild(divCheckBoxB);
         divAnswerB.appendChild(answerB);
 
-        divAnswerC.appendChild(document.createTextNode("Answer C"));
+        divAnswerC.appendChild(divCheckBoxC);
         divAnswerC.appendChild(answerC);
 
-        divAnswerD.appendChild(document.createTextNode("Answer D"));
+        divAnswerD.appendChild(divCheckBoxD);
         divAnswerD.appendChild(answerD);
+
+        divCheckBoxA.appendChild(labelCheckboxA);
+        divCheckBoxB.appendChild(labelCheckboxB);
+        divCheckBoxC.appendChild(labelCheckboxC);
+        divCheckBoxD.appendChild(labelCheckboxD);
+
+        labelCheckboxA.appendChild(inputCheckboxA);
+        labelCheckboxB.appendChild(inputCheckboxB);
+        labelCheckboxC.appendChild(inputCheckboxC);
+        labelCheckboxD.appendChild(inputCheckboxD);
+
+        labelCheckboxA.innerHTML += "Answer A";
+        labelCheckboxB.innerHTML += "Answer B";
+        labelCheckboxC.innerHTML += "Answer C";
+        labelCheckboxD.innerHTML += "Answer D";
 
         divSaveButton.appendChild(saveButton);
         divCancelButton.appendChild(cancelButton);

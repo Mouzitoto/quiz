@@ -44,14 +44,16 @@ public class JDBCUserDAO implements IUserDAO{
 
 
     public void insertUser(User user) {
-        String query = "insert into t_users (id, vlogin, vfullname, vemail, vpasswordhash)" +
-                "values (nextval('main_seq'), :login, :fullname, :email, :passwordhash)";
+        String query = "insert into t_users (id, vlogin, vfullname, vemail, vpasswordhash, bisactive)" +
+                "values (:id, :login, :fullname, :email, :passwordhash, :isActive)";
 
         MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", user.getId());
         params.addValue("login", user.getLogin());
         params.addValue("fullname", user.getFullName());
         params.addValue("email", user.getEmail());
         params.addValue("passwordhash", user.getPasswordHash());
+        params.addValue("isActive", user.getActive());
 
         jdbcTemplate.update(query, params);
     }

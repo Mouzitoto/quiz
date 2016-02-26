@@ -63,24 +63,28 @@ public class QuizService {
             String answerBodyA,
             String answerBodyB,
             String answerBodyC,
-            String answerBodyD) {
+            String answerBodyD,
+            Boolean isCorrectA,
+            Boolean isCorrectB,
+            Boolean isCorrectC,
+            Boolean isCorrectD) {
         List<Answer> answers = new ArrayList<Answer>();
 
         Answer answerA = new Answer();
         answerA.setBody(answerBodyA);
-        answerA.setCorrect(false);
+        answerA.setCorrect(isCorrectA);
 
         Answer answerB = new Answer();
         answerB.setBody(answerBodyB);
-        answerB.setCorrect(false);
+        answerB.setCorrect(isCorrectB);
 
         Answer answerC = new Answer();
         answerC.setBody(answerBodyC);
-        answerC.setCorrect(false);
+        answerC.setCorrect(isCorrectC);
 
         Answer answerD = new Answer();
         answerD.setBody(answerBodyD);
-        answerD.setCorrect(true);
+        answerD.setCorrect(isCorrectD);
 
         answers.add(answerA);
         answers.add(answerB);

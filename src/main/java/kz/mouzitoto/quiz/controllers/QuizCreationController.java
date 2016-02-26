@@ -68,14 +68,22 @@ public class QuizCreationController {
             @RequestParam(value = "answerA") String answerA,
             @RequestParam(value = "answerB") String answerB,
             @RequestParam(value = "answerC") String answerC,
-            @RequestParam(value = "answerD") String answerD) {
+            @RequestParam(value = "answerD") String answerD,
+            @RequestParam(value = "isCorrectA", required = false, defaultValue = "false") Boolean isCorrectA,
+            @RequestParam(value = "isCorrectB", required = false, defaultValue = "false") Boolean isCorrectB,
+            @RequestParam(value = "isCorrectC", required = false, defaultValue = "false") Boolean isCorrectC,
+            @RequestParam(value = "isCorrectD", required = false, defaultValue = "false") Boolean isCorrectD){
         quizService.insertQuestionAndAnswers(
                 quizId,
                 question,
                 answerA,
                 answerB,
                 answerC,
-                answerD);
+                answerD,
+                isCorrectA,
+                isCorrectB,
+                isCorrectC,
+                isCorrectD);
 
         return "redirect:/editQuiz/" + quizId;
     }
