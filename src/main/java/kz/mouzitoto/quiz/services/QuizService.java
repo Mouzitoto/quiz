@@ -68,30 +68,45 @@ public class QuizService {
             Boolean isCorrectB,
             Boolean isCorrectC,
             Boolean isCorrectD) {
-        List<Answer> answers = new ArrayList<Answer>();
+        //check if we have any correct answer
+        Boolean hasCorrectAnswer = false;
+        if(isCorrectA)
+            hasCorrectAnswer = true;
+        if(isCorrectB)
+            hasCorrectAnswer = true;
+        if(isCorrectC)
+            hasCorrectAnswer = true;
+        if(isCorrectD)
+            hasCorrectAnswer = true;
 
-        Answer answerA = new Answer();
-        answerA.setBody(answerBodyA);
-        answerA.setCorrect(isCorrectA);
+        //TODO: tell user that he didn't choose correct answer
+        //do nothing if we haven't any correct answer
+        if(hasCorrectAnswer) {
+            List<Answer> answers = new ArrayList<Answer>();
 
-        Answer answerB = new Answer();
-        answerB.setBody(answerBodyB);
-        answerB.setCorrect(isCorrectB);
+            Answer answerA = new Answer();
+            answerA.setBody(answerBodyA);
+            answerA.setCorrect(isCorrectA);
 
-        Answer answerC = new Answer();
-        answerC.setBody(answerBodyC);
-        answerC.setCorrect(isCorrectC);
+            Answer answerB = new Answer();
+            answerB.setBody(answerBodyB);
+            answerB.setCorrect(isCorrectB);
 
-        Answer answerD = new Answer();
-        answerD.setBody(answerBodyD);
-        answerD.setCorrect(isCorrectD);
+            Answer answerC = new Answer();
+            answerC.setBody(answerBodyC);
+            answerC.setCorrect(isCorrectC);
 
-        answers.add(answerA);
-        answers.add(answerB);
-        answers.add(answerC);
-        answers.add(answerD);
+            Answer answerD = new Answer();
+            answerD.setBody(answerBodyD);
+            answerD.setCorrect(isCorrectD);
 
-        jdbcCustomOperations.insertQuestionAndAnswers(quizId, questionBody, answers);
+            answers.add(answerA);
+            answers.add(answerB);
+            answers.add(answerC);
+            answers.add(answerD);
+
+            jdbcCustomOperations.insertQuestionAndAnswers(quizId, questionBody, answers);
+        }
     }
 
     public List<Question> getQuestionsByQuizId(Long quizId) {

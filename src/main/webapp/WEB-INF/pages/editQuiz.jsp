@@ -17,6 +17,7 @@
     <link href="/resources/css/smartQuiz.css" rel="stylesheet">
 
     <%--custom js--%>
+    <script src="/resources/js/addQuestionAndAnswers.js"></script>
     <script src="/resources/js/smartQuiz.js"></script>
     <%--dont know how to pass this variable to js inside js file... enjoy with this duck tape--%>
     <script>var quizId =<c:out value="${quiz.id}"/></script>
@@ -30,7 +31,10 @@
         <div class="col-md-6 no-float center-block">
             <div class="row">
                 <label>Quiz Name</label>
-                <input type="text" name="quizName" class="form-control" value="${quiz.name}"/>
+                <input type="text" id="quizName" name="quizName" class="form-control" value="${quiz.name}" disabled/>
+                <a id="editQuizName" class="" onclick="editQuizName()">Edit</a>
+                <a id="saveQuizName" class="hide" onclick="">Save</a>
+                <a id="cancelQuizNameEdition" class="hide" onclick="">Cancel</a>
                 <input type="button" onclick="addQAForm()" value="Add question" class="pull-right"/>
             </div>
             <div id="questionsContainer" class="row">
