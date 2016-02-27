@@ -19,4 +19,6 @@ public interface IQuizDAO {
     public void insertQuiz(String name, User user, Date date);
 
     public List<Quiz> getQuizesByUser(User user);
+
+    public void updateQuizNameById(Long id, String name);
 }

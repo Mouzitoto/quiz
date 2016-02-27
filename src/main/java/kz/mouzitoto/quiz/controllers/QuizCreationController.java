@@ -5,6 +5,7 @@ import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.dao.models.User;
 import kz.mouzitoto.quiz.services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,6 +60,14 @@ public class QuizCreationController {
         mav.addObject("questions", questions);
 
         return mav;
+    }
+
+    @RequestMapping(value = "/updateQuizName/{id}/{name}")
+    public String updateQuizName(@PathVariable(value = "id") Long id,
+                                 @PathVariable(value = "name") String name) {
+        quizService.updateQuizNameById(id, name);
+
+        return "redirect:/editQuiz/" + id;
     }
 
     @RequestMapping(value = "/editQuiz/{quizId}", method = RequestMethod.POST)

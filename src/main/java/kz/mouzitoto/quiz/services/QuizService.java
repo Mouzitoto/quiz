@@ -48,6 +48,10 @@ public class QuizService {
         jdbcQuizDAO.insertQuiz(name, user, currentDate);
     }
 
+    public void updateQuizNameById(Long id, String name) {
+        jdbcQuizDAO.updateQuizNameById(id, name);
+    }
+
     public List<Quiz> getQuizesByUser() {
         User user = (User) session.getAttribute("user");
         return jdbcQuizDAO.getQuizesByUser(user);

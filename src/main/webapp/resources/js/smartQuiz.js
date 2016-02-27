@@ -2,6 +2,10 @@
  * Created by ruslan.babich on 26.02.2016.
  */
 
+function updateQuizName() {
+    var newQuizName = document.getElementById("quizName").value;
+    window.location = "/updateQuizName/" + quizId + "/" + newQuizName
+}
 
 function editQuizName() {
     enable("quizName");

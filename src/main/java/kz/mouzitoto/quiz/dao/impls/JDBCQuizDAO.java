@@ -54,4 +54,13 @@ public class JDBCQuizDAO implements IQuizDAO {
 
         return jdbcTemplate.query(query, params, new QuizRowMapper());
     }
+
+    public void updateQuizNameById(Long id, String name) {
+        String query = "update t_quizes set vname = :name where id = :id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("name", name);
+        params.addValue("id", id);
+
+        jdbcTemplate.update(query, params);
+    }
 }

@@ -33,7 +33,7 @@
                 <label>Quiz Name</label>
                 <input type="text" id="quizName" name="quizName" class="form-control" value="${quiz.name}" disabled/>
                 <a id="editQuizName" class="" onclick="editQuizName()">Edit</a>
-                <a id="saveQuizName" class="hide" onclick="">Save</a>
+                <a id="saveQuizName" class="hide" onclick="updateQuizName()">Save</a>
                 <a id="cancelQuizNameEdition" class="hide" onclick="">Cancel</a>
                 <input type="button" onclick="addQAForm()" value="Add question" class="pull-right"/>
             </div>
