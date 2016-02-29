@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ruslan.babich on 11.02.2016.
@@ -62,5 +63,13 @@ public class JDBCQuizDAO implements IQuizDAO {
         params.addValue("id", id);
 
         jdbcTemplate.update(query, params);
+    }
+
+    public List<Quiz> getQuizesByName(String name) {
+        String query = "select * from t_quizes where lower(vname) ~ :name";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("name", name.toLowerCase());
+
+        return jdbcTemplate.query(query, params, new QuizRowMapper());
     }
 }

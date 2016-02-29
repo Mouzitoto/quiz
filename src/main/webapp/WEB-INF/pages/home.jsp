@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ruslan.babich
@@ -25,15 +26,30 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-            <div id="imaginary_container">
-                <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search for quiz" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
+            <div class="row">
+                <form action="/home" method="POST">
+                    <div class="input-group stylish-input-group">
+                        <input name="quizName" type="text" class="form-control" placeholder="Search for quiz">
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <table class="table table-hover table-bordered">
+                    <tbody>
+                    <c:forEach items="${quizes}" var="q" varStatus="status">
+                        <tr>
+                            <td><a href="/quizInfo/${q.id}">
+                                <div>${q.name}</div>
+                            </a></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

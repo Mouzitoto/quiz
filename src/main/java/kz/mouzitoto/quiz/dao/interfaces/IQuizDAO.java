@@ -21,4 +21,6 @@ public interface IQuizDAO {
     public List<Quiz> getQuizesByUser(User user);
 
     public void updateQuizNameById(Long id, String name);
+
+    public List<Quiz> getQuizesByName(String name);
 }

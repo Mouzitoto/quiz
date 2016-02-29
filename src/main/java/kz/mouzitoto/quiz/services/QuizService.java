@@ -113,6 +113,10 @@ public class QuizService {
         }
     }
 
+    public List<Quiz> getQuizesByName(String name) {
+        return jdbcQuizDAO.getQuizesByName(name);
+    }
+
     public List<Question> getQuestionsByQuizId(Long quizId) {
         List<Question> questions = new ArrayList<Question>();
         questions = jdbcQuestionDAO.getQuestionsByQuizId(quizId);

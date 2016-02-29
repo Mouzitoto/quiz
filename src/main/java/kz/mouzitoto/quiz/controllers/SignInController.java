@@ -24,7 +24,7 @@ public class SignInController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String getHomePageAfterAuthorization(
-            @RequestParam(value = "isAuthorized", required = false) Boolean isAuthorized) {
+            @RequestParam(value = "isAuthorized", required = false, defaultValue = "false") Boolean isAuthorized) {
 
         if(isAuthorized)
             userService.putUserIntoHttpSession();
