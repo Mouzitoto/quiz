@@ -47,7 +47,7 @@
                 </c:forEach>
             </div>
             <div class="row">
-                <input type="button" class="btn-info" onclick="getCheckedAnswers()" value="FINISH" />
+                <input type="button" class="btn-info" onclick="finishQuiz()" value="FINISH" />
             </div>
         </div>
     </div>

@@ -13,10 +13,8 @@ public class Result {
     private Long userId;
     private Date startDate;
     private Date endDate;
-    private Float result;
-
-    private List<Answer> answers;
-
+    private float result;
+    private String answerIds;
 
 
     //Getters and Setters
@@ -61,19 +59,19 @@ public class Result {
         this.endDate = endDate;
     }
 
-    public Float getResult() {
+    public float getResult() {
         return result;
     }
 
-    public void setResult(Float result) {
+    public void setResult(float result) {
         this.result = result;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
+    public String getAnswerIds() {
+        return answerIds;
     }
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
+    public void setAnswerIds(String answerIds) {
+        this.answerIds = answerIds;
     }
 }

@@ -28,7 +28,7 @@ public class QuizPassingController {
     HttpSession session;
 
     @RequestMapping(value = "/home", method = RequestMethod.POST)
-    public ModelAndView getHomePageViaPost(@RequestParam(value = "quizName")String quizName) {
+    public ModelAndView getHomePageViaPost(@RequestParam(value = "quizName") String quizName) {
         List<Quiz> quizes = quizService.getQuizesByName(quizName);
 
         ModelAndView mav = new ModelAndView();
@@ -49,7 +49,7 @@ public class QuizPassingController {
         return mav;
     }
 
-    @RequestMapping(value = "startQuiz/{id}")
+    @RequestMapping(value = "/startQuiz/{id}")
     public ModelAndView getStartQuizPage(@PathVariable(value = "id") Long quizId) {
         Quiz quiz = quizService.getQuizById(quizId);
         List<Question> questions = quizService.getQuestionsByQuizId(quizId);
@@ -61,6 +61,17 @@ public class QuizPassingController {
         mav.setViewName("startQuiz");
         mav.addObject("quiz", quiz);
         mav.addObject("questions", questions);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/finishQuiz/{answers}")
+    public ModelAndView getFinishQuizPage(@PathVariable(value = "answers") String answerIds) {
+        float quizResult = quizService.updateAndGetQuizResult(answerIds);
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("quizResult", quizResult);
+        mav.setViewName("finishQuiz");
 
         return mav;
     }

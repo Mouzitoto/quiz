@@ -137,4 +137,15 @@ public class QuizService {
 
         return jdbcResultDAO.createResult(quizId, user.getId(), startDate);
     }
+
+    public float updateAndGetQuizResult(String answerIds) {
+        int answerCount = answerIds.length() - answerIds.replace(",", "").length() + 1;
+        Integer correctAnswerCount = jdbcAnswerDAO.getCorrectAnswerCount(answerIds);
+
+        float quizResult = correctAnswerCount * 100 / answerCount;
+
+        jdbcResultDAO.updateResultById((Long) session.getAttribute("resultId"), new Date(), quizResult, answerIds);
+
+        return quizResult;
+    }
 }

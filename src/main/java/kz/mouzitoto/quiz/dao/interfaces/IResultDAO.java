@@ -8,7 +8,7 @@ import java.util.Date;
 public interface IResultDAO {
     public Long createResult(Long quizId, Long userId, Date startDate);
 
-    public void updateResultById(Long resultId);
+    public void updateResultById(Long resultId, Date endDate, float quizResult, String answerIds);
 
     public void cleanUnfinishedResults();
 }

@@ -12,4 +12,6 @@ public interface IAnswerDAO {
     public void insertAnswer(Long id, String answerBody, Long questionId, Boolean isCorrect);
 
     public List<Answer> getAnswersByQuestionId(Long questionId);
+
+    public Integer getCorrectAnswerCount(String answerIds);
 }

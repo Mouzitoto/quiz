@@ -44,4 +44,15 @@ public class JDBCAnswerDAO implements IAnswerDAO {
 
         return jdbcTemplate.query(query, params, new AnswerRowMapper());
     }
+
+    public Integer getCorrectAnswerCount(String answerIds) {
+        String query = "select count(*) from t_answers " +
+                "where biscorrect = true " +
+                "and id in (" + answerIds + ")";
+        //TODO: remake this to parameter query
+        //need to transform string to numeric or may be numeric array, don't know yet
+
+
+        return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class);
+    }
 }

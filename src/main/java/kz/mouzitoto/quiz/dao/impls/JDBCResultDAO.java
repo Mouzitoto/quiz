@@ -47,8 +47,19 @@ public class JDBCResultDAO implements IResultDAO {
         return resultId;
     }
 
-    public void updateResultById(Long resultId) {
+    public void updateResultById(Long resultId, Date endDate, float quizResult, String answerIds) {
+        String query = "update t_results " +
+                "set denddate = :endDate, " +
+                "fresult = :quizResult, " +
+                "vanswerids = :answerIds " +
+                "where id = :resultId";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("endDate", endDate);
+        params.addValue("quizResult", quizResult);
+        params.addValue("answerIds", answerIds);
+        params.addValue("resultId", resultId);
 
+        jdbcTemplate.update(query, params);
     }
 
     public void cleanUnfinishedResults() {

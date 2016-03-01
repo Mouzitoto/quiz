@@ -25,7 +25,7 @@ function disable(elementId) {
     document.getElementById(elementId).disable = true;
 }
 
-function getCheckedAnswers() {
+function finishQuiz() {
     var answers = [];
 
     var allInputs = document.getElementsByTagName("input");
