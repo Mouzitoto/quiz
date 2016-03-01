@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edit Quiz Page</title>
+    <title>Start Quiz Page</title>
 
     <%--Bootstrap core CSS--%>
     <link href="/resources/frameworks/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,10 +17,7 @@
     <link href="/resources/css/smartQuiz.css" rel="stylesheet">
 
     <%--custom js--%>
-    <script src="/resources/js/addQuestionAndAnswers.js"></script>
     <script src="/resources/js/smartQuiz.js"></script>
-    <%--dont know how to pass this variable to js inside js file... enjoy with this duck tape--%>
-    <script>var quizId =<c:out value="${quiz.id}"/></script>
 </head>
 <body>
 
@@ -30,21 +27,18 @@
     <div class="container">
         <div class="col-md-6 no-float center-block">
             <div class="row">
-                <label>Quiz Name</label>
-                <input type="text" id="quizName" name="quizName" class="form-control" value="${quiz.name}" disabled/>
-                <a id="editQuizName" class="" onclick="editQuizName()">Edit</a>
-                <a id="saveQuizName" class="hide" onclick="updateQuizName()">Save</a>
-                <a id="cancelQuizNameEdition" class="hide" onclick="">Cancel</a>
-                <input type="button" onclick="addQAForm()" value="Add question" class="pull-right"/>
+                <label>Quiz Name: ${quiz.name}</label>
             </div>
-            <div id="questionsContainer" class="row">
+            <div class="row">
                 <c:forEach items="${questions}" var="questions" varStatus="status">
                     <div class="col-md-12">
                         <label>${questions.body}</label>
                     </div>
                     <c:forEach items="${questions.answers}" var="answers" varStatus="status">
                         <div class="col-md-6">
-                            <span>${answers.body}</span>
+                            <div class="checkbox">
+                                <label><input type="checkbox" dbid="${answers.id}"/>${answers.body}</label>
+                            </div>
                         </div>
                     </c:forEach>
                     <div class="col-md-12">
@@ -52,9 +46,10 @@
                     </div>
                 </c:forEach>
             </div>
+            <div class="row">
+                <input type="button" class="btn-info" onclick="getCheckedAnswers()" value="FINISH" />
+            </div>
         </div>
-
-
     </div>
 </div>
 

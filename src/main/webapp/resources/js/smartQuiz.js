@@ -25,3 +25,21 @@ function disable(elementId) {
     document.getElementById(elementId).disable = true;
 }
 
+function getCheckedAnswers() {
+    var answers = [];
+
+    var allInputs = document.getElementsByTagName("input");
+
+    //now find checkboxes from all inputs
+    for(var i = 0; i < allInputs.length; i++) {
+        if (allInputs[i].type == "checkbox") {
+            if (allInputs[i].checked == true) {
+                answers.push(allInputs[i].getAttribute("dbid"));
+                //this[answer + i] = new Object();
+                //this[answer + i].id = allInputs[i].getAttribute("dbid");
+            }
+        }
+    }
+
+    window.location.href = "/finishQuiz/" + answers;
+}

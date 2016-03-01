@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16152868-25d3-4fc6-b7f0-0e757b543e4f" name="Default" comment="css is working now">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCResultDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IResultDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/models/Result.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/quizInfo.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/startQuiz.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/SignInController.java" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/SignInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuizDAO.java" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuizDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IQuizDAO.java" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IQuizDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizCreationController.java" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizCreationController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java" afterPath="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/smartquiz.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/smartquiz.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/TODO.txt" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/TODO.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/quiz-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/quiz-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="quiz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,12 +42,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+      <file leaf-file-name="JDBCResultDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCResultDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54867256">
-              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="87" selection-start-line="42" selection-start-column="87" selection-end-line="42" selection-end-column="87" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1456835419255" expanded="true" signature="1086:1211" placeholder="insert into t_results..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDBCQuestionDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuestionDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <marker date="1456401874926" expanded="true" signature="918:967" placeholder="select * fro..t_questions..." />
+                <marker date="1456401874926" expanded="true" signature="1255:1373" placeholder="insert into t_questions..." />
+                <marker date="1456401874926" expanded="true" signature="1694:1796" placeholder="insert into t_questions..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+              <caret line="57" column="50" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,17 +81,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JDBCQuizDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuizDAO.java">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="smartQuiz.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9141414">
+              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+              <folding>
+                <element signature="n#!!block;n#updateQuizName#0" expanded="false" />
+                <element signature="n#!!block;n#editQuizName#0" expanded="false" />
+                <element signature="n#!!block;n#enable#0" expanded="false" />
+                <element signature="n#!!block;n#disable#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startQuiz.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/startQuiz.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.3846154">
+              <caret line="39" column="66" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="super-test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/super-test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="26.961538">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuizService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+              <caret line="135" column="47" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
               <folding>
-                <marker date="1456766697201" expanded="true" signature="962:999" placeholder="select * fro..t_quizes..." />
-                <marker date="1456766697201" expanded="true" signature="1281:1432" placeholder="insert into t_quizes..." />
-                <marker date="1456766697201" expanded="true" signature="1764:1810" placeholder="select * fro..t_quizes..." />
-                <marker date="1456766697201" expanded="true" signature="2065:2113" placeholder="update t_qui..." />
-                <marker date="1456766697201" expanded="true" signature="2387:2436" placeholder="select * fro..t_quizes..." />
+                <element signature="imports" expanded="true" />
+                <element signature="method#insertQuiz#0;class#QuizService#0" expanded="false" />
+                <element signature="method#getQuizesByUser#0;class#QuizService#0" expanded="false" />
+                <element signature="method#insertQuestionAndAnswers#0;class#QuizService#0" expanded="false" />
+                <element signature="method#getQuestionsByQuizId#0;class#QuizService#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -101,11 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IUser.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/select.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/selectAll.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/signIn.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/registration.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/signIn.css" />
@@ -139,19 +201,24 @@
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCUserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/TODO.txt" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/JDBCCustomOperations.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/addQuestionAndAnswers.js" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizCreationController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IQuizDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/smartQuiz.css" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/SignInController.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuizDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/quizInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/models/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IResultDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCResultDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/TODO.txt" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/startQuiz.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js" />
       </list>
     </option>
   </component>
@@ -265,6 +332,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -619,9 +687,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -638,16 +705,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\projects\MINE\quiz\src\main\webapp\WEB-INF\pages" />
-      <recent name="E:\projects\MINE\quiz\src\main\webapp\resources\img" />
+      <recent name="E:\projects\MINE\quiz\src\main\webapp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="kz.mouzitoto.quiz.dao.rowmappers" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\projects\MINE\quiz\src\main\webapp\WEB-INF\pages" />
-      <recent name="E:\projects\MINE\quiz\src\main\webapp\WEB-INF" />
+      <recent name="E:\projects\MINE\quiz\src\main\webapp\resources\img" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.tom 8">
@@ -1206,6 +1273,7 @@
       <workItem from="1456550088547" duration="2615000" />
       <workItem from="1456750191822" duration="1896000" />
       <workItem from="1456762406039" duration="4480000" />
+      <workItem from="1456830470752" duration="7793000" />
     </task>
     <task id="LOCAL-00001" summary="Security works now, but css doesnt work :(">
       <created>1456234295471</created>
@@ -1229,7 +1297,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128335000" />
+    <option name="totallyTimeSpent" value="136128000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1253,7 +1321,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20272315" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35679215" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30605564" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1294,7 +1362,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1303,32 +1371,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/addQuestionAndAnswers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
           <folding>
             <element signature="method#insertQuiz#0;class#QuizService#0" expanded="false" />
             <element signature="method#insertQuestionAndAnswers#0;class#QuizService#0" expanded="false" />
-            <element signature="e#3450#3451#0" expanded="true" />
-            <element signature="e#3506#3507#0" expanded="true" />
-            <element signature="method#getQuestionsByQuizId#0;class#QuizService#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1371,7 +1420,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#updateQuizName#0" expanded="false" />
+            <element signature="n#!!block;n#editQuizName#0" expanded="false" />
+            <element signature="n#!!block;n#enable#0" expanded="false" />
+            <element signature="n#!!block;n#disable#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1389,72 +1443,6 @@
           <folding>
             <element signature="method#insertQuiz#0;class#QuizService#0" expanded="false" />
             <element signature="method#insertQuestionAndAnswers#0;class#QuizService#0" expanded="false" />
-            <element signature="e#3450#3451#0" expanded="true" />
-            <element signature="e#3506#3507#0" expanded="true" />
-            <element signature="method#getQuestionsByQuizId#0;class#QuizService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizCreationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="35" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/SignInController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/addQuestionAndAnswers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="77" selection-start-line="143" selection-start-column="77" selection-end-line="143" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/jquery-2.2.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="979" selection-start-line="3" selection-start-column="979" selection-end-line="3" selection-end-column="979" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-          <folding>
-            <element signature="method#insertQuiz#0;class#QuizService#0" expanded="false" />
-            <element signature="method#insertQuestionAndAnswers#0;class#QuizService#0" expanded="false" />
-            <element signature="e#3450#3451#0" expanded="true" />
-            <element signature="e#3506#3507#0" expanded="true" />
-            <element signature="method#getQuestionsByQuizId#0;class#QuizService#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1529,14 +1517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1538463">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4615384">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1616,13 +1596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.4.RELEASE/spring-web-4.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36531365">
@@ -1645,56 +1618,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/addQuestionAndAnswers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IQuizDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
-          <folding>
-            <element signature="method#insertQuiz#0;class#QuizService#0" expanded="false" />
-            <element signature="method#insertQuestionAndAnswers#0;class#QuizService#0" expanded="false" />
-            <element signature="e#3450#3451#0" expanded="true" />
-            <element signature="e#3506#3507#0" expanded="true" />
-            <element signature="method#getQuestionsByQuizId#0;class#QuizService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizCreationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1707,10 +1634,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../soft/apache-maven-3.3.9/local-repository/org/springframework/spring-web/4.2.4.RELEASE/spring-web-4.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuizDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#817#818#0" expanded="false" />
+            <element signature="e#895#896#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/quizInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.576923">
+          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/editQuiz.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3357271">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/myQuizes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.97666067">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="40" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.192308">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/models/Quiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32425067">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IQuizDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6294278">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IAnswerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32425067">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/models/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#399#400#0" expanded="false" />
+            <element signature="e#424#425#0" expanded="false" />
+            <element signature="e#458#459#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="false" />
+            <element signature="e#588#589#0" expanded="false" />
+            <element signature="e#624#625#0" expanded="false" />
+            <element signature="e#655#656#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#726#727#0" expanded="false" />
+            <element signature="e#762#763#0" expanded="false" />
+            <element signature="e#796#797#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#876#877#0" expanded="false" />
+            <element signature="e#918#919#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1024#1025#0" expanded="false" />
+            <element signature="e#1062#1063#0" expanded="false" />
+            <element signature="e#1094#1095#0" expanded="false" />
+            <element signature="e#1123#1124#0" expanded="false" />
+            <element signature="e#1166#1167#0" expanded="false" />
+            <element signature="e#1202#1203#0" expanded="false" />
+            <element signature="e#1242#1243#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
+            <element signature="e#1324#1325#0" expanded="false" />
+            <element signature="e#1362#1363#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizCreationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1725,43 +1758,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/myQuizes.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3846154">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="40" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuestionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <marker date="1456401874926" expanded="true" signature="918:967" placeholder="select * fro..t_questions..." />
+            <marker date="1456401874926" expanded="true" signature="1255:1373" placeholder="insert into t_questions..." />
+            <marker date="1456401874926" expanded="true" signature="1694:1796" placeholder="insert into t_questions..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/interfaces/IResultDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/services/QuizService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="135" column="47" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insertQuiz#0;class#QuizService#0" expanded="false" />
+            <element signature="method#getQuizesByUser#0;class#QuizService#0" expanded="false" />
+            <element signature="method#insertQuestionAndAnswers#0;class#QuizService#0" expanded="false" />
+            <element signature="method#getQuestionsByQuizId#0;class#QuizService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCResultDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="87" selection-start-line="42" selection-start-column="87" selection-end-line="42" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1456835419255" expanded="true" signature="1086:1211" placeholder="insert into t_results..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/controllers/QuizPassingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <caret line="57" column="50" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/mouzitoto/quiz/dao/impls/JDBCQuizDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
-          <folding>
-            <marker date="1456766697201" expanded="true" signature="962:999" placeholder="select * fro..t_quizes..." />
-            <marker date="1456766697201" expanded="true" signature="1281:1432" placeholder="insert into t_quizes..." />
-            <marker date="1456766697201" expanded="true" signature="1764:1810" placeholder="select * fro..t_quizes..." />
-            <marker date="1456766697201" expanded="true" signature="2065:2113" placeholder="update t_qui..." />
-            <marker date="1456766697201" expanded="true" signature="2387:2436" placeholder="select * fro..t_quizes..." />
-          </folding>
+        <state vertical-scroll-proportion="0.30050504">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54867256">
-          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/super-test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="26.961538">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/startQuiz.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3846154">
+          <caret line="39" column="66" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/smartQuiz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9141414">
+          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!block;n#updateQuizName#0" expanded="false" />
+            <element signature="n#!!block;n#editQuizName#0" expanded="false" />
+            <element signature="n#!!block;n#enable#0" expanded="false" />
+            <element signature="n#!!block;n#disable#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

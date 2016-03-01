@@ -5,3 +5,4 @@
 5. Do not insert null questions
 6. At least one answer must be correct
 7. Authenticate user after registration
+8. Session timeout must be more than 2 hours

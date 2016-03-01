@@ -4,14 +4,13 @@ import kz.mouzitoto.quiz.dao.JDBCCustomOperations;
 import kz.mouzitoto.quiz.dao.impls.JDBCAnswerDAO;
 import kz.mouzitoto.quiz.dao.impls.JDBCQuestionDAO;
 import kz.mouzitoto.quiz.dao.impls.JDBCQuizDAO;
+import kz.mouzitoto.quiz.dao.impls.JDBCResultDAO;
 import kz.mouzitoto.quiz.dao.models.Answer;
 import kz.mouzitoto.quiz.dao.models.Question;
 import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.dao.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -28,6 +27,9 @@ public class QuizService {
 
     @Autowired
     JDBCQuizDAO jdbcQuizDAO;
+
+    @Autowired
+    JDBCResultDAO jdbcResultDAO;
 
     @Autowired
     JDBCCustomOperations jdbcCustomOperations;
@@ -126,5 +128,13 @@ public class QuizService {
         }
 
         return questions;
+    }
+
+    public Long createResult(Long quizId) {
+        User user = (User) session.getAttribute("user");
+        Date startDate = new Date();
+        System.out.println("date: " + startDate);
+
+        return jdbcResultDAO.createResult(quizId, user.getId(), startDate);
     }
 }
