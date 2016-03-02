@@ -25,8 +25,30 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 no-float center-block">
-            <h2>Quiz name: ${quiz.name}</h2>
-            <div class="bg-info">Your result is: ${quizResult}</div>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Quiz name</td>
+                    <td>${quiz.name}</td>
+                </tr>
+                <tr>
+                    <td>Quiz creator</td>
+                    <td>${quizCreator.fullName}</td>
+                </tr>
+                <tr>
+                    <td>Question count</td>
+                    <td>${questionCount}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td></td>
+                </tr>
+                <tr class="bg-info">
+                    <td>Your result</td>
+                    <td>${quizResult}%</td>
+                </tr>
+            </table>
+            <br/>
+            <a href="/home" class="btn btn-info">Back to home page</a>
         </div>
     </div>
 </div>

@@ -41,5 +41,5 @@ function finishQuiz() {
         }
     }
 
-    window.location.href = "/finishQuiz/" + answers;
+    window.location.href = "/finishQuiz/" + quizId + "/" + answers;
 }

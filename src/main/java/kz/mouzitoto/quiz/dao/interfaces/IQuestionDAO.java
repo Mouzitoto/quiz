@@ -15,5 +15,7 @@ public interface IQuestionDAO {
 
     public void insertQuestion(Long id, Long quizId, String questionBody);
 
+    public Integer getQuestionCountByQuizId(Long quizId);
+
 
 }

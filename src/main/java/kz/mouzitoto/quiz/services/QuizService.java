@@ -148,4 +148,8 @@ public class QuizService {
 
         return quizResult;
     }
+
+    public Integer getQuestionCountByQuizId(Long quizId) {
+        return jdbcQuestionDAO.getQuestionCountByQuizId(quizId);
+    }
 }

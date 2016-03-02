@@ -25,8 +25,26 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 no-float center-block">
-            <h2>Quiz name: ${quiz.name}</h2>
-            <a href="/startQuiz/${quiz.id}">Start the Quiz</a>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Quiz name</td>
+                    <td>${quiz.name}</td>
+                </tr>
+                <tr>
+                    <td>Quiz creator</td>
+                    <td>${quizCreator.fullName}</td>
+                </tr>
+                <tr>
+                    <td>Question count</td>
+                    <td>${questionCount}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td></td>
+                </tr>
+            </table>
+            <br/>
+            <a href="/startQuiz/${quiz.id}" class="btn btn-info">Start the Quiz</a>
         </div>
     </div>
 </div>

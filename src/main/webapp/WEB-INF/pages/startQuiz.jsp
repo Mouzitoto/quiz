@@ -18,6 +18,8 @@
 
     <%--custom js--%>
     <script src="/resources/js/smartQuiz.js"></script>
+    <%--dont know how to pass this variable to js inside js file... enjoy with this duck tape--%>
+    <script>var quizId =<c:out value="${quiz.id}"/></script>
 </head>
 <body>
 
@@ -47,7 +49,7 @@
                 </c:forEach>
             </div>
             <div class="row">
-                <input type="button" class="btn-info" onclick="finishQuiz()" value="FINISH" />
+                <a class="btn btn-info" onclick="finishQuiz()">Finish</a>
             </div>
         </div>
     </div>

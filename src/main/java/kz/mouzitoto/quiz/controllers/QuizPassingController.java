@@ -2,7 +2,9 @@ package kz.mouzitoto.quiz.controllers;
 
 import kz.mouzitoto.quiz.dao.models.Question;
 import kz.mouzitoto.quiz.dao.models.Quiz;
+import kz.mouzitoto.quiz.dao.models.User;
 import kz.mouzitoto.quiz.services.QuizService;
+import kz.mouzitoto.quiz.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +29,9 @@ public class QuizPassingController {
     @Autowired
     HttpSession session;
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping(value = "/home", method = RequestMethod.POST)
     public ModelAndView getHomePageViaPost(@RequestParam(value = "quizName") String quizName) {
         List<Quiz> quizes = quizService.getQuizesByName(quizName);
@@ -39,11 +44,15 @@ public class QuizPassingController {
     }
 
     @RequestMapping(value = "/quizInfo/{id}")
-    public ModelAndView getQuizInfoPage(@PathVariable(value = "id") Long id) {
-        Quiz quiz = quizService.getQuizById(id);
+    public ModelAndView getQuizInfoPage(@PathVariable(value = "id") Long quizId) {
+        Quiz quiz = quizService.getQuizById(quizId);
+        int questionCount = quizService.getQuestionCountByQuizId(quizId);
+        User quizCreator = userService.getUserById(quiz.getUserId());
 
         ModelAndView mav = new ModelAndView();
         mav.addObject("quiz", quiz);
+        mav.addObject("questionCount", questionCount);
+        mav.addObject("quizCreator", quizCreator);
         mav.setViewName("quizInfo");
 
         return mav;
@@ -65,11 +74,18 @@ public class QuizPassingController {
         return mav;
     }
 
-    @RequestMapping(value = "/finishQuiz/{answers}")
-    public ModelAndView getFinishQuizPage(@PathVariable(value = "answers") String answerIds) {
+    @RequestMapping(value = "/finishQuiz/{quizId}/{answers}")
+    public ModelAndView getFinishQuizPage(@PathVariable(value = "quizId") Long quizId,
+            @PathVariable(value = "answers") String answerIds) {
+        Quiz quiz = quizService.getQuizById(quizId);
+        int questionCount = quizService.getQuestionCountByQuizId(quizId);
+        User quizCreator = userService.getUserById(quiz.getUserId());
         float quizResult = quizService.updateAndGetQuizResult(answerIds);
 
         ModelAndView mav = new ModelAndView();
+        mav.addObject("quiz", quiz);
+        mav.addObject("questionCount", questionCount);
+        mav.addObject("quizCreator", quizCreator);
         mav.addObject("quizResult", quizResult);
         mav.setViewName("finishQuiz");
 

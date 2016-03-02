@@ -53,4 +53,10 @@ public class JDBCQuestionDAO implements IQuestionDAO {
 
         jdbcTemplate.update(query, params);
     }
+
+    public Integer getQuestionCountByQuizId(Long quizId) {
+        String query = "select count(*) from t_questions where nquizid = ?";
+
+        return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class, quizId);
+    }
 }
