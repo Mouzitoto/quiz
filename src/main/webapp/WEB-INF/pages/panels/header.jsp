@@ -19,9 +19,8 @@
             <ul class="nav navbar-nav middle-menu">
                 <li><a href="/myQuizes">My quizes</a></li>
                 <li><a href="/createQuizPage">Create quiz</a></li>
-                <li><a href="#">My results</a></li>
-                <li><a href="#">Best results</a></li>
-                <li><a href="/editQuiz">For testing</a></li>
+                <li><a href="/myResults">My results</a></li>
+                <li><a href="/bestResults">Best results</a></li>
             </ul>
             <%--right menu--%>
             <ul class="nav navbar-nav navbar-right">

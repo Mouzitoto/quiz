@@ -1,5 +1,6 @@
 package kz.mouzitoto.quiz.controllers;
 
+import kz.mouzitoto.quiz.dao.models.ExtendedResult;
 import kz.mouzitoto.quiz.dao.models.Question;
 import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.dao.models.User;
@@ -88,6 +89,28 @@ public class QuizPassingController {
         mav.addObject("quizCreator", quizCreator);
         mav.addObject("quizResult", quizResult);
         mav.setViewName("finishQuiz");
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/myResults")
+    public ModelAndView getMyResultsPage() {
+        List<ExtendedResult> myResults = quizService.getMyResults();
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("myResults");
+        mav.addObject("myResults", myResults);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/bestResults")
+    public ModelAndView getBestResultsPage() {
+        List<ExtendedResult> bestResults = quizService.getBestResults();
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("bestResults");
+        mav.addObject("bestResults", bestResults);
 
         return mav;
     }

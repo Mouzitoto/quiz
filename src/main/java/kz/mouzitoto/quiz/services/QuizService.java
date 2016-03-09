@@ -5,10 +5,7 @@ import kz.mouzitoto.quiz.dao.impls.JDBCAnswerDAO;
 import kz.mouzitoto.quiz.dao.impls.JDBCQuestionDAO;
 import kz.mouzitoto.quiz.dao.impls.JDBCQuizDAO;
 import kz.mouzitoto.quiz.dao.impls.JDBCResultDAO;
-import kz.mouzitoto.quiz.dao.models.Answer;
-import kz.mouzitoto.quiz.dao.models.Question;
-import kz.mouzitoto.quiz.dao.models.Quiz;
-import kz.mouzitoto.quiz.dao.models.User;
+import kz.mouzitoto.quiz.dao.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -151,5 +148,14 @@ public class QuizService {
 
     public Integer getQuestionCountByQuizId(Long quizId) {
         return jdbcQuestionDAO.getQuestionCountByQuizId(quizId);
+    }
+
+    public List<ExtendedResult> getMyResults() {
+        Long userId = ((User) session.getAttribute("user")).getId();
+        return jdbcResultDAO.getExtendedResultsByUserId(userId);
+    }
+
+    public List<ExtendedResult> getBestResults() {
+        return jdbcResultDAO.getBestResultsWithLimit(10);
     }
 }

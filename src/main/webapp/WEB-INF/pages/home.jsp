@@ -39,17 +39,22 @@
                 </form>
             </div>
             <div class="row">
-                <table class="table table-hover table-bordered">
-                    <tbody>
-                    <c:forEach items="${quizes}" var="q" varStatus="status">
-                        <tr>
-                            <td><a href="/quizInfo/${q.id}">
-                                <div>${q.name}</div>
-                            </a></td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Search results</h3>
+                    </div>
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                        <c:forEach items="${quizes}" var="q" varStatus="status">
+                            <tr>
+                                <td><a href="/quizInfo/${q.id}">
+                                    <div>${q.name}</div>
+                                </a></td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

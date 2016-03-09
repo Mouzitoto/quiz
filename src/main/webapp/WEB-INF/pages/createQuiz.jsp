@@ -25,7 +25,7 @@
 <div class="container">
     <form class="col-centered" action="/createQuiz">
         <div class="form-group">
-            <label for="quizName">Enter quiz name: </label>
+            <label for="quizName">Enter new quiz name: </label>
             <input type="text" class="form-control" id="quizName" name="quizName">
         </div>
         <button type="submit" class="btn btn-info">Create quiz</button>
