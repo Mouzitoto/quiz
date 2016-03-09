@@ -7,7 +7,7 @@ function updateQuizName() {
     window.location = "/updateQuizName/" + quizId + "/" + newQuizName
 }
 
-function editQuizName() {
+function enableQuizName() {
     enable("quizName");
     document.getElementById("editQuizName").className += " hide";
     document.getElementById("saveQuizName").className =
@@ -16,13 +16,21 @@ function editQuizName() {
         document.getElementById("cancelQuizNameEdition").className.replace("hide", "");
 }
 
+function disableQuizName() {
+    disable("quizName");
+    document.getElementById("editQuizName").className =
+        document.getElementById("editQuizName").className.replace("hide", "");
+    document.getElementById("saveQuizName").className += " hide";
+    document.getElementById("cancelQuizNameEdition").className += " hide";
+}
+
 function enable(elementId) {
     //document.getElementById(elementId).removeAttribute("disabled");
-    document.getElementById(elementId).disabled = false;
+    document.getElementById(elementId).readOnly = false;
 }
 
 function disable(elementId) {
-    document.getElementById(elementId).disable = true;
+    document.getElementById(elementId).readOnly = true;
 }
 
 function finishQuiz() {

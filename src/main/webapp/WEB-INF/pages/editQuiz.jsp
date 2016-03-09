@@ -31,10 +31,10 @@
         <div class="col-md-6 no-float center-block">
             <div class="row">
                 <label>Quiz Name</label>
-                <input type="text" id="quizName" name="quizName" class="form-control" value="${quiz.name}" disabled/>
-                <a id="editQuizName" class="" onclick="editQuizName()">Edit</a>
+                <input type="text" id="quizName" name="quizName" class="form-control" value="${quiz.name}" readOnly/>
+                <a id="editQuizName" class="" onclick="enableQuizName()">Edit</a>
                 <a id="saveQuizName" class="hide" onclick="updateQuizName()">Save</a>
-                <a id="cancelQuizNameEdition" class="hide" onclick="">Cancel</a>
+                <a id="cancelQuizNameEdition" class="hide" onclick="disableQuizName()">Cancel</a>
                 <input type="button" onclick="addQAForm()" value="Add question" class="pull-right"/>
             </div>
             <div id="questionsContainer" class="row">

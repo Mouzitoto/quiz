@@ -14,7 +14,9 @@
 }
 
 .middle-menu {
-    margin-left: 50px;
+    margin: 0 auto;
+    float: none;
+    width: 31%;
 }
 
 .stylish-input-group .input-group-addon{

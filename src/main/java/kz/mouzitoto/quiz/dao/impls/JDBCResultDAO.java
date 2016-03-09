@@ -72,7 +72,8 @@ public class JDBCResultDAO implements IResultDAO {
                 "inner join t_quizes qui on qui.id = res.nquizid " +
                 "inner join t_users us on us.id = qui.nuserid " +
                 "where res.nuserid = :userId " +
-                "and res.denddate is not null";
+                "and res.denddate is not null " +
+                "order by denddate desc";
         MapSqlParameterSource params = new MapSqlParameterSource("userId", userId);
 
         return jdbcTemplate.query(query, params, new ExtendedResultRowMapper());
@@ -85,7 +86,7 @@ public class JDBCResultDAO implements IResultDAO {
                 "inner join t_users usOwner on usOwner.id = qui.nuserid " +
                 "inner join t_users us on us.id = res.nuserid " +
                 "where res.denddate is not null " +
-                "order by res.fresult " +
+                "order by res.fresult desc, res.denddate desc " +
                 "limit :limit";
         MapSqlParameterSource params = new MapSqlParameterSource("limit", limit);
 

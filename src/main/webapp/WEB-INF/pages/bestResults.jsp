@@ -24,7 +24,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 no-float center-block">
+        <div class="col-md-8 no-float center-block">
             <div class="panel panel-primary center-block">
                 <div class="panel-heading">
                     <h3 class="panel-title">Best Results</h3>
