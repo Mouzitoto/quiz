@@ -51,3 +51,11 @@ function finishQuiz() {
 
     window.location.href = "/finishQuiz/" + quizId + "/" + answers;
 }
+
+function updateQuestionAndAnswers(questionId) {
+    var allInputs = document.getElementById("editQuestionBlock" + questionId).childNodes;
+
+    for(var i = 0; i < allInputs.length; i++) {
+        console.log("i: " + i + " " + allInputs[i].getAttribute("dbId"));
+    }
+}

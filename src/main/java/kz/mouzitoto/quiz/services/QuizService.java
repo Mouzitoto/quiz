@@ -108,6 +108,7 @@ public class QuizService {
             answers.add(answerC);
             answers.add(answerD);
 
+            //TODO: trim question body and if it is null, tell user about it
             jdbcCustomOperations.insertQuestionAndAnswers(quizId, questionBody, answers);
         }
     }

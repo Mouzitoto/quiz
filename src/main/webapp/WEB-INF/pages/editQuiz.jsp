@@ -39,16 +39,35 @@
             </div>
             <div id="questionsContainer" class="row">
                 <c:forEach items="${questions}" var="questions" varStatus="status">
-                    <div class="col-md-12">
-                        <label>${questions.body}</label>
-                    </div>
-                    <c:forEach items="${questions.answers}" var="answers" varStatus="status">
-                        <div class="col-md-6">
-                            <span>${answers.body}</span>
+                    <div id="displayQuestionBlock${questions.id}">
+                        <div class="col-md-12">
+                            <label>${questions.body}</label>
                         </div>
-                    </c:forEach>
-                    <div class="col-md-12">
-                        <hr class="questions-hr">
+                        <c:forEach items="${questions.answers}" var="answers" varStatus="status">
+                            <div class="col-md-6">
+                                <span
+                                        <c:if test="${answers.correct}">class="text-success bold"</c:if>>${answers.body}</span>
+                            </div>
+                        </c:forEach>
+                        <div class="col-md-12">
+                            <hr class="questions-hr">
+                        </div>
+                    </div>
+                    <%--edit question block--%>
+                    <div id="editQuestionBlock${questions.id}">
+                        <div class="col-md-12">
+                            <input type="text" name="questionBody" value="${questions.body}"/>
+                            <a onclick="updateQuestionAndAnswers(${questions.id})">Save</a>
+                        </div>
+                        <c:forEach items="${questions.answers}" var="answers" varStatus="status">
+                            <div class="col-md-6">
+                                <input type="checkbox" id="answer${answers.id}" <c:if test="${answers.correct}">checked</c:if>/>
+                                <input type="text" dbId="${answers.id}" value="${answers.body}"/>
+                            </div>
+                        </c:forEach>
+                        <div class="col-md-12">
+                            <hr class="questions-hr">
+                        </div>
                     </div>
                 </c:forEach>
             </div>

@@ -33,16 +33,6 @@ public class JDBCQuestionDAO implements IQuestionDAO {
         return jdbcTemplate.query(query, params, new QuestionRowMapper());
     }
 
-    public void insertQuestion(Long quizId, String questionBody) {
-        String query = "insert into t_questions (id, vbody, nquizid) " +
-                "values (nextval('main_seq'), :questionBody, :quizId)";
-        MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("questionBody", questionBody);
-        params.addValue("quizId", quizId);
-
-        jdbcTemplate.update(query, params);
-    }
-
     public void insertQuestion(Long id, Long quizId, String questionBody) {
         String query = "insert into t_questions (id, vbody, nquizid) " +
                 "values (:id, :questionBody, :quizId)";
