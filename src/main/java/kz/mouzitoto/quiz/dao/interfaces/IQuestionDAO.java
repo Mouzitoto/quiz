@@ -15,5 +15,6 @@ public interface IQuestionDAO {
 
     public Integer getQuestionCountByQuizId(Long quizId);
 
+    public void updateQuestion(Question question);
 
 }

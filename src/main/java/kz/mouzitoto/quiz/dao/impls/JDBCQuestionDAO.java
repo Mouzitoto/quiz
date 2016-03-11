@@ -49,4 +49,13 @@ public class JDBCQuestionDAO implements IQuestionDAO {
 
         return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class, quizId);
     }
+
+    public void updateQuestion(Question question) {
+        String query = "update t_questions set vbody = :body where id = :id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("body", question.getBody());
+        params.addValue("id", question.getId());
+
+        jdbcTemplate.update(query, params);
+    }
 }

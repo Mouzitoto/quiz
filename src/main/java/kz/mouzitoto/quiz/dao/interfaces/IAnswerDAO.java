@@ -14,4 +14,6 @@ public interface IAnswerDAO {
     public List<Answer> getAnswersByQuestionId(Long questionId);
 
     public Integer getCorrectAnswerCount(String answerIds);
+
+    public void updateAnswer(Answer answer);
 }

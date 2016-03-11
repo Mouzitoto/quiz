@@ -73,18 +73,18 @@ public class QuizService {
             Boolean isCorrectD) {
         //check if we have any correct answer
         Boolean hasCorrectAnswer = false;
-        if(isCorrectA)
+        if (isCorrectA)
             hasCorrectAnswer = true;
-        if(isCorrectB)
+        if (isCorrectB)
             hasCorrectAnswer = true;
-        if(isCorrectC)
+        if (isCorrectC)
             hasCorrectAnswer = true;
-        if(isCorrectD)
+        if (isCorrectD)
             hasCorrectAnswer = true;
 
         //TODO: tell user that he didn't choose correct answer
         //do nothing if we haven't any correct answer
-        if(hasCorrectAnswer) {
+        if (hasCorrectAnswer) {
             List<Answer> answers = new ArrayList<Answer>();
 
             Answer answerA = new Answer();
@@ -108,8 +108,10 @@ public class QuizService {
             answers.add(answerC);
             answers.add(answerD);
 
-            //TODO: trim question body and if it is null, tell user about it
-            jdbcCustomOperations.insertQuestionAndAnswers(quizId, questionBody, answers);
+            //TODO: tell user that questionBody can't be null
+            //questionBody cant be null
+            if (!questionBody.trim().equals(""))
+                jdbcCustomOperations.insertQuestionAndAnswers(quizId, questionBody, answers);
         }
     }
 
@@ -158,5 +160,9 @@ public class QuizService {
 
     public List<ExtendedResult> getBestResults() {
         return jdbcResultDAO.getBestResultsWithLimit(10);
+    }
+
+    public void updateQuestionAndAnswers(Question question) {
+        jdbcCustomOperations.updateQuestionAndAnswers(question);
     }
 }

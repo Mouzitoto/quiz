@@ -55,4 +55,17 @@ public class JDBCAnswerDAO implements IAnswerDAO {
 
         return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class);
     }
+
+    public void updateAnswer(Answer answer) {
+        String query = "update t_answers " +
+                "set vbody = :body, " +
+                "biscorrect = :isCorrect " +
+                "where id = :id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("body", answer.getBody());
+        params.addValue("isCorrect", answer.isCorrect());
+        params.addValue("id", answer.getId());
+
+        jdbcTemplate.update(query, params);
+    }
 }

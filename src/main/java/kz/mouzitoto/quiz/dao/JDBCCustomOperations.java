@@ -40,10 +40,17 @@ public class JDBCCustomOperations {
         Long questionId = getNextValFromMainSec();
         jdbcQuestionDAO.insertQuestion(questionId, quizId, questionBody);
 
-        for (int i = 0; i < answers.size(); i++) {
-            Answer answer = answers.get(i);
+        for (Answer answer : answers) {
             Long answerId = getNextValFromMainSec();
             jdbcAnswerDAO.insertAnswer(answerId, answer.getBody(), questionId, answer.isCorrect());
+        }
+    }
+
+    public void updateQuestionAndAnswers(Question question) {
+        jdbcQuestionDAO.updateQuestion(question);
+
+        for(Answer answer : question.getAnswers()) {
+            jdbcAnswerDAO.updateAnswer(answer);
         }
     }
 

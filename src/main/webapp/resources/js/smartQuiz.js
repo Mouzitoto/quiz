@@ -53,9 +53,36 @@ function finishQuiz() {
 }
 
 function updateQuestionAndAnswers(questionId) {
-    var allInputs = document.getElementById("editQuestionBlock" + questionId).childNodes;
+    var answers = []; //answers list
+
+    var allInputs = document.getElementById("editQuestionBlock" + questionId).querySelectorAll("INPUT");
 
     for(var i = 0; i < allInputs.length; i++) {
-        console.log("i: " + i + " " + allInputs[i].getAttribute("dbId"));
+        if(allInputs[i].getAttribute("db-id") != null) {
+            var answer = new Object();
+            answer.id = allInputs[i].getAttribute("db-id");
+            answer.body = allInputs[i].value;
+            answer.correct = document.getElementById("answerIsCorrect" + answer.id).checked;
+
+            answers.push(answer);
+        }
     }
+
+    var question = new Object();
+    question.id = questionId;
+    question.body = document.getElementById("question" + questionId).value;
+    question.answers = answers;
+
+    //POST request with json inside
+    var req = new XMLHttpRequest();
+    var url = "/editQuestion";
+    req.open("POST", url, true);
+    req.setRequestHeader("Content-type", "application/json");
+    req.send(JSON.stringify(question));
+
+
+    //TODO: this shit isn't work correctly
+    window.location.reload();
+
+
 }

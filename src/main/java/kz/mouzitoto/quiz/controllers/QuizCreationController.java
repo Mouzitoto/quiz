@@ -5,10 +5,7 @@ import kz.mouzitoto.quiz.dao.models.Quiz;
 import kz.mouzitoto.quiz.services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -66,8 +63,8 @@ public class QuizCreationController {
         return "redirect:/editQuiz/" + id;
     }
 
-    @RequestMapping(value = "/editQuiz/{quizId}", method = RequestMethod.POST)
-    public String getEditQuizPageViaPost(
+    @RequestMapping(value = "/addQuestion/{quizId}", method = RequestMethod.POST)
+    public String addQuestionToQuiz(
             @PathVariable(value = "quizId") Long quizId,
             @RequestParam(value = "question") String question,
             @RequestParam(value = "answerA") String answerA,
@@ -93,5 +90,10 @@ public class QuizCreationController {
                     isCorrectD);
 
         return "redirect:/editQuiz/" + quizId;
+    }
+
+    @RequestMapping(value = "/editQuestion", method = RequestMethod.POST)
+    public void editQuestionInQuiz(@RequestBody Question question) {
+        quizService.updateQuestionAndAnswers(question);
     }
 }

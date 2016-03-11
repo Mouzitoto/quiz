@@ -56,13 +56,13 @@
                     <%--edit question block--%>
                     <div id="editQuestionBlock${questions.id}">
                         <div class="col-md-12">
-                            <input type="text" name="questionBody" value="${questions.body}"/>
+                            <input type="text" id="question${questions.id}" value="${questions.body}"/>
                             <a onclick="updateQuestionAndAnswers(${questions.id})">Save</a>
                         </div>
                         <c:forEach items="${questions.answers}" var="answers" varStatus="status">
                             <div class="col-md-6">
-                                <input type="checkbox" id="answer${answers.id}" <c:if test="${answers.correct}">checked</c:if>/>
-                                <input type="text" dbId="${answers.id}" value="${answers.body}"/>
+                                <input type="checkbox" id="answerIsCorrect${answers.id}" <c:if test="${answers.correct}">checked</c:if>/>
+                                <input type="text" db-id="${answers.id}" value="${answers.body}"/>
                             </div>
                         </c:forEach>
                         <div class="col-md-12">

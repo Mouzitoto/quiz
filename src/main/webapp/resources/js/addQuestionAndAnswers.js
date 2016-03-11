@@ -43,7 +43,7 @@ function addQAForm(){
 
         //set attributes
         divRow.setAttribute("class", "row bg-info");
-        form.setAttribute("action", "/editQuiz/" + quizId);
+        form.setAttribute("action", "/addQuestion/" + quizId);
         form.setAttribute("method", "POST");
         divQuestion.setAttribute("class", "form-group col-md-12 add-question-first");
         divAnswerA.setAttribute("class", "form-group col-md-6");
