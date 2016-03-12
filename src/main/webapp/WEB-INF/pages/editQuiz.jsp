@@ -39,9 +39,13 @@
             </div>
             <div id="questionsContainer" class="row">
                 <c:forEach items="${questions}" var="questions" varStatus="status">
-                    <div id="displayQuestionBlock${questions.id}">
+                    <div id="displayQuestionBlock${questions.id}" class="">
+                        <div class="col-md-12">
+                            <hr class="questions-hr">
+                        </div>
                         <div class="col-md-12">
                             <label>${questions.body}</label>
+                            <a class="pull-right" onclick="showEditQuestionBlock(${questions.id})">Edit</a>
                         </div>
                         <c:forEach items="${questions.answers}" var="answers" varStatus="status">
                             <div class="col-md-6">
@@ -49,27 +53,28 @@
                                         <c:if test="${answers.correct}">class="text-success bold"</c:if>>${answers.body}</span>
                             </div>
                         </c:forEach>
+                    </div>
+                    <%--edit question block--%>
+                    <div id="editQuestionBlock${questions.id}" class="hide">
                         <div class="col-md-12">
                             <hr class="questions-hr">
                         </div>
-                    </div>
-                    <%--edit question block--%>
-                    <div id="editQuestionBlock${questions.id}">
                         <div class="col-md-12">
-                            <input type="text" id="question${questions.id}" value="${questions.body}"/>
-                            <a onclick="updateQuestionAndAnswers(${questions.id})">Save</a>
+                            <input type="text" class="form-control question-input" id="question${questions.id}" value="${questions.body}"/>
+                            <a class="pull-right" onclick="updateQuestionAndAnswers(${questions.id})">Save</a>
+                            <a class="pull-right cancel-btn" onclick="hideEditQuestionBlock(${questions.id})">Cancel</a>
                         </div>
                         <c:forEach items="${questions.answers}" var="answers" varStatus="status">
                             <div class="col-md-6">
                                 <input type="checkbox" id="answerIsCorrect${answers.id}" <c:if test="${answers.correct}">checked</c:if>/>
-                                <input type="text" db-id="${answers.id}" value="${answers.body}"/>
+                                <input type="text" class="form-control answer-input" db-id="${answers.id}" value="${answers.body}"/>
                             </div>
                         </c:forEach>
-                        <div class="col-md-12">
-                            <hr class="questions-hr">
-                        </div>
                     </div>
                 </c:forEach>
+                <div class="col-md-12">
+                    <hr class="questions-hr">
+                </div>
             </div>
         </div>
 

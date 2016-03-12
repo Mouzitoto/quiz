@@ -54,3 +54,17 @@
     font-weight: bold;
 }
 
+.cancel-btn {
+    margin-right: 10px;
+}
+
+.question-input {
+    display: inline-block !important;
+    width: 80% !important;
+}
+
+.answer-input {
+    display: inline-block !important;
+    width: 80% !important;
+    margin-top: 10px;
+}

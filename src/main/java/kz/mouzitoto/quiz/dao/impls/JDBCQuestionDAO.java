@@ -26,7 +26,7 @@ public class JDBCQuestionDAO implements IQuestionDAO {
 
 
     public List<Question> getQuestionsByQuizId(Long quizId) {
-        String query = "select * from t_questions where nquizid = :quizId";
+        String query = "select * from t_questions where nquizid = :quizId order by id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("quizId", quizId);
 

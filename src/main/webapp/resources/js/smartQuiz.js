@@ -24,6 +24,18 @@ function disableQuizName() {
     document.getElementById("cancelQuizNameEdition").className += " hide";
 }
 
+function showEditQuestionBlock(questionId) {
+    document.getElementById("displayQuestionBlock" + questionId).className += " hide";
+    document.getElementById("editQuestionBlock" + questionId).className =
+        document.getElementById("editQuestionBlock" + questionId).className.replace("hide", "");
+}
+
+function hideEditQuestionBlock(questionId) {
+    document.getElementById("editQuestionBlock" + questionId).className += " hide";
+    document.getElementById("displayQuestionBlock" + questionId).className =
+        document.getElementById("displayQuestionBlock" + questionId).className.replace("hide", "");
+}
+
 function enable(elementId) {
     //document.getElementById(elementId).removeAttribute("disabled");
     document.getElementById(elementId).readOnly = false;
@@ -81,8 +93,12 @@ function updateQuestionAndAnswers(questionId) {
     req.send(JSON.stringify(question));
 
 
-    //TODO: this shit isn't work correctly
-    window.location.reload();
+    //TODO: what will be when db will be overloaded? Need to take off this hardcode milliseconds and reload page after callback from db
+    //database need time to update
+    setTimeout(function () {
+            hideEditQuestionBlock(questionId);
+            window.location.reload(true);},
+        500);
 
 
 }
