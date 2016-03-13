@@ -17,5 +17,5 @@ public interface IResultDAO {
 
     public List<ExtendedResult> getBestResultsWithLimit(Integer limit);
 
-    public void cleanUnfinishedResults();
+    public void deleteUnfinishedResultsByUser(Long userId);
 }

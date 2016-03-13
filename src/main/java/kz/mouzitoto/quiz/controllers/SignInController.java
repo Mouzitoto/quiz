@@ -34,8 +34,10 @@ public class SignInController {
     public ModelAndView getHomePageAfterAuthorization(
             @RequestParam(value = "isAuthorized", required = false, defaultValue = "false") Boolean isAuthorized) {
 
-        if(isAuthorized)
+        if(isAuthorized) {
             userService.putUserIntoHttpSession();
+            quizService.cleanUserUnfinishedResults();
+        }
 
         List<Quiz> quizes = quizService.getQuizesByName("");
 
@@ -52,32 +54,43 @@ public class SignInController {
     }
 
     //registration
-    @RequestMapping(value = "/registration")
-    public String getRegistrationPage() {
-        return "registration";
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public ModelAndView getRegistrationPage(@RequestParam(value = "userUniqueCode", required = false, defaultValue = "0") int userUniqueCode) {
+        //TODO: little bit ugly, think about it in future
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("registration");
+        mav.addObject("errorMsg", "");
+        mav.addObject("errorBlockClass", "hide");
+
+        if (userUniqueCode == 1) {
+            mav.addObject("errorMsg", "That login is already exists");
+            mav.addObject("errorBlockClass", "");
+        } else if (userUniqueCode == 2) {
+            mav.addObject("errorMsg", "That email is already exists");
+            mav.addObject("errorBlockClass", "");
+        } else if (userUniqueCode == 3) {
+            mav.addObject("errorMsg", "That login and email are already exists");
+            mav.addObject("errorBlockClass", "");
+        }
+
+        return mav;
     }
 
 
-    @RequestMapping(value = "/register")
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@RequestParam(value = "login") String login,
                            @RequestParam(value = "name") String name,
                            @RequestParam(value = "email") String email,
                            @RequestParam(value = "password") String password) {
+        //check login and email for unique
+        int userUniqueCode = userService.checkUserLoginAndEmail(login, email);
+        if(userUniqueCode > 0)
+            return "redirect:/registration?userUniqueCode=" + userUniqueCode;
+
         userService.registerUser(login, email, password, name);
 
-        return "/signIn";
-
+        return "signIn";
     }
-
-
-
-
-    //tmp
-    @RequestMapping(value = "/tmp")
-    public String getTmpPage(){
-        return "tmp";
-    }
-
 }
 
 

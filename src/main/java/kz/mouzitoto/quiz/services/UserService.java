@@ -4,9 +4,11 @@ import kz.mouzitoto.quiz.dao.JDBCCustomOperations;
 import kz.mouzitoto.quiz.dao.impls.JDBCUserDAO;
 import kz.mouzitoto.quiz.dao.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -21,6 +23,9 @@ public class UserService {
 
     @Autowired
     private JDBCCustomOperations jdbcCustomOperations;
+
+    @Autowired
+    private HttpSession session;
 
     public User getUserById(Long id) {
         return jdbcUserDAO.getUserById(id);
@@ -43,17 +48,23 @@ public class UserService {
     }
 
 
-    public List<User> getAllUsers(){
-        return jdbcUserDAO.getAllUsers();
-    }
-
-
-    public Integer getUserCount(){
-        return jdbcUserDAO.getUserCount();
-    }
-
     public void putUserIntoHttpSession() {
-        jdbcUserDAO.putUserIntoHttpSession();
+        String userName = ((org.springframework.security.core.userdetails.User)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal())
+                .getUsername();
+        User user = jdbcUserDAO.getUserByLogin(userName);
+
+        session.setAttribute("user", user);
+    }
+
+    public int checkUserLoginAndEmail(String login, String email) {
+        int result = 0;
+        if(jdbcUserDAO.getUserCountByLogin(login) > 0)
+            result++;
+        if(jdbcUserDAO.getUserCountByEmail(email) > 0)
+            result = result + 2;
+
+        return result;
     }
 
 }

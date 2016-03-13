@@ -14,11 +14,9 @@ public interface IUserDAO {
 
     public void insertUser(User user);
 
-    public List<User> getAllUsers();
-
-    public Integer getUserCount();
-
     public User getUserByLogin(String login);
 
-    public void putUserIntoHttpSession();
+    public Integer getUserCountByLogin(String login);
+
+    public Integer getUserCountByEmail(String email);
 }

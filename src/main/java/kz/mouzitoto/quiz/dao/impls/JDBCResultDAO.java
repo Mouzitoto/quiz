@@ -93,7 +93,10 @@ public class JDBCResultDAO implements IResultDAO {
         return jdbcTemplate.query(query, params, new ExtendedResultRowMapper());
     }
 
-    public void cleanUnfinishedResults() {
-        //TODO: DO IT SOMEDAY...
+    public void deleteUnfinishedResultsByUser(Long userId) {
+        String query = "delete from t_results where denddate is null and nuserid = :userId";
+        MapSqlParameterSource params = new MapSqlParameterSource("userId", userId);
+
+        jdbcTemplate.update(query, params);
     }
 }

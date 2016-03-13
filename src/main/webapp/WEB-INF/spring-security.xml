@@ -10,6 +10,7 @@
     <http auto-config="true">
         <csrf disabled="true"/>
         <intercept-url pattern="/signIn" access="permitAll" />
+        <intercept-url pattern="/afterLogout" access="permitAll" />
         <intercept-url pattern="/registration" access="permitAll" />
         <intercept-url pattern="/register" access="permitAll" />
         <intercept-url pattern="/resources/**" access="permitAll"/>
@@ -22,7 +23,8 @@
                     password-parameter="password"
                     authentication-failure-url="/signIn?accessDenied=true"
         />
-        <logout logout-url="/logout"/>
+        <logout logout-url="/logout"
+                logout-success-url="/afterLogout"/>
     </http>
 
 

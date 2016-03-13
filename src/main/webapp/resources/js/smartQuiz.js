@@ -98,7 +98,7 @@ function updateQuestionAndAnswers(questionId) {
     setTimeout(function () {
             hideEditQuestionBlock(questionId);
             window.location.reload(true);},
-        500);
+        500); //0.5 sec
 
 
 }

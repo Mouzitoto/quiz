@@ -165,4 +165,12 @@ public class QuizService {
     public void updateQuestionAndAnswers(Question question) {
         jdbcCustomOperations.updateQuestionAndAnswers(question);
     }
+
+    public void cleanUserUnfinishedResults() {
+        User user = (User) session.getAttribute("user");
+
+        System.out.println("userId: " + user.getId());
+
+        jdbcResultDAO.deleteUnfinishedResultsByUser(user.getId());
+    }
 }

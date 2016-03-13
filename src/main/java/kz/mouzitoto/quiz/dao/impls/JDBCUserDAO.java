@@ -4,15 +4,11 @@ import kz.mouzitoto.quiz.dao.interfaces.IUserDAO;
 import kz.mouzitoto.quiz.dao.models.User;
 import kz.mouzitoto.quiz.dao.rowmappers.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
-import java.util.List;
 
 /**
  * Created by ruslan.babich on 27.01.2016.
@@ -27,9 +23,6 @@ public class JDBCUserDAO implements IUserDAO{
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
-
-    @Autowired
-    HttpSession session;
 
     public User getUserById(Long id) {
         String query = "select * from t_users where id = :id";
@@ -60,17 +53,18 @@ public class JDBCUserDAO implements IUserDAO{
 
 
 
-    public List<User> getAllUsers() {
-        String query = "select * from t_users";
+    public Integer getUserCountByLogin(String login){
+        String query = "select count(*) from t_users " +
+                "where lower(vlogin) = ?";
 
-        return jdbcTemplate.query(query, new UserRowMapper());
+        return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class, login.toLowerCase());
     }
 
+    public Integer getUserCountByEmail(String email){
+        String query = "select count(*) from t_users " +
+                "where lower(vemail) = ?";
 
-    public Integer getUserCount(){
-        String query = "select count(*) from t_users";
-
-        return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class);
+        return jdbcTemplate.getJdbcOperations().queryForObject(query, Integer.class, email.toLowerCase());
     }
 
     public User getUserByLogin(String login) {
@@ -81,15 +75,5 @@ public class JDBCUserDAO implements IUserDAO{
 
         return jdbcTemplate.queryForObject(query, params, new UserRowMapper());
     }
-
-    public void putUserIntoHttpSession() {
-        String userName = ((org.springframework.security.core.userdetails.User)
-                SecurityContextHolder.getContext().getAuthentication().getPrincipal())
-                .getUsername();
-        User user = getUserByLogin(userName);
-
-        session.setAttribute("user", user);
-    }
-
 
 }
