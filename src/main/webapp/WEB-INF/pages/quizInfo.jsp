@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td>Description</td>
-                    <td></td>
+                    <td><%--TODO: add description for quiz--%></td>
                 </tr>
             </table>
             <br/>

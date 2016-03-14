@@ -30,6 +30,7 @@
     <div class="container">
         <div class="col-md-6 no-float center-block">
             <div class="row">
+                <%--TODO: add description for quiz--%>
                 <label>Quiz Name</label>
                 <input type="text" id="quizName" name="quizName" class="form-control" value="${quiz.name}" readOnly/>
                 <a id="editQuizName" class="" onclick="enableQuizName()">Edit</a>

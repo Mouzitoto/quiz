@@ -23,13 +23,18 @@
 
 
 <div class="container">
-    <form class="col-centered" action="/createQuiz">
-        <div class="form-group">
-            <label for="quizName">Enter new quiz name: </label>
-            <input type="text" class="form-control" id="quizName" name="quizName">
+    <div class="row">
+        <div class="col-md-6 no-float center-block">
+            <form action="/createQuiz">
+                <div class="form-group">
+                    <label for="quizName">Enter new quiz name: </label>
+                    <input type="text" class="form-control" id="quizName" name="quizName">
+                </div>
+                <%--TODO: add description for quiz--%>
+                <button type="submit" class="btn btn-info">Create quiz</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-info">Create quiz</button>
-    </form>
+    </div>
 </div>
 
 

@@ -26,6 +26,7 @@
 
             <%--middle menu--%>
             <ul class="nav navbar-nav middle-menu">
+                <li><a href="/home">Search</a></li>
                 <li><a href="/myQuizes">My quizes</a></li>
                 <li><a href="/createQuizPage">Create quiz</a></li>
                 <li><a href="/myResults">My results</a></li>

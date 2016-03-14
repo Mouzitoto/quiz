@@ -27,7 +27,7 @@
         <div class="col-md-6 no-float center-block">
             <div class="panel panel-primary center-block">
                 <div class="panel-heading">
-                    <h3 class="panel-title">My Quizes</h3>
+                    <h3 class="panel-title">My Quizes (click to edit)</h3>
                 </div>
 
                 <table class="table table-hover">
