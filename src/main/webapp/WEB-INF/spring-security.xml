@@ -23,8 +23,7 @@
                     password-parameter="password"
                     authentication-failure-url="/signIn?accessDenied=true"
         />
-        <logout logout-url="/logout"
-                logout-success-url="/afterLogout"/>
+        <logout logout-url="/logout"/>
     </http>
 
 
